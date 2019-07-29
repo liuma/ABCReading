@@ -1,0 +1,1383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="6b768f55-bfe4-44f6-96bc-f9ab5f9b463b" name="Default" comment="">
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/js/controllers/mini_add_word.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/js/controllers/permissions_list.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/js/controllers/role_permissions.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/js/controllers/translate_word.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/js/controllers/translate_word_list.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/view/mini_add_word.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/view/role_permissions.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/view/translate_word.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/view/translate_word_list.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/report.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/imgs/audio_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/imgs/content_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/imgs/pause.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/imgs/play.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/imgs/stamp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/js.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_share/static/report.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/address.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/bind.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/clear.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/collage.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/group.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/address_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/alert_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/carol_code.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/code.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/collage_zhuyi.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/discount_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/download_code.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/download_h5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/download_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/get_code_btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/get_discount_btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/list_1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/list_100.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/list_2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/list_3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/list_4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/member_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/mini_new.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/minus.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/minus_no.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/phone.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/phone_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/plus.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/report_title.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/share_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/suc_code.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/suc_login.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/suc_title.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/suc_title_group.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/success.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/to_collage.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/to_suc.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/tuanzhang_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/vip_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/js/cityPicker.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/js/common.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/js/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/js/regions.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/js/utils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/order.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/pay.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/suc.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/success.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/report.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/images/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/images/btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/images/img1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/images/img2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/images/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/images/title_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/imgs/audio_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/imgs/content_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/imgs/pause.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/imgs/play.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/imgs/stamp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/js.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/static/report.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/images/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/images/btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/images/img1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/images/img2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/images/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/images/title_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/js/common.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/js/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/share/js/utils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/js/controllers/edit_code.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/js/controllers/pay_statistics.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/view/edit_code.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/view/interact_words.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../ASL/view/pay_statistics.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/common/js/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/common/js/js.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/bg_hd.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/card_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/con1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/con2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/con3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/con4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/con_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/coupon_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/login_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/logo_ft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/share_img.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/suc_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/tal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/tv_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/vip1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/vip2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/vip3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/vip4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/imgs/vip_card.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/iqiyi.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/iqiyi.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/iqiyi/result.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/bg_hd.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/con1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/con2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/con3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/con4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/con_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/coupon_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/logo_ft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/result_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/suc_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/tal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/vip1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/vip2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/vip3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/vip4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/imgs/vip_card.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/mobile.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/mobile.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/mobile/result.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/static/activity.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/code_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/coupon_cash.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/coupon_vip.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/download_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/form_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/gift_box.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/hd_content_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/hd_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/hd_title.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/list_tips_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/phone_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/prize_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/prize_tag2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/result_ft_title.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/imgs/text_reading.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/ths.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/activity/ths/ths.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/js/reg.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/clear.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_app.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_ft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_group_left.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_hd.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_list.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_prize.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_record.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_reward.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_share.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/bg_title.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/btn_back.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/btn_back_list.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/con1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/con2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/con3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/con4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/con_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/coupon_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/desc_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/ft_left.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/ft_right.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/head_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/icon_message.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/icon_prize.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/icon_reward.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/icon_timeline.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/login_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/login_bg_hd.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/logo_ft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/raz.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/result_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/rule_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/share_img.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/suc_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/tal.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/text_vip.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/tv_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/vip1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/vip2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/vip3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/vip4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/imgs/vip_card.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/js/login.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/lottery.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/lottery/lottery.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/report/bind_guide.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/report/imgs/info_head_nav.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/app_h5/star/imgs/bg_hd.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/card/giftJ.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/card/result.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/card/static/giftJ.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/common/css/swiper.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/common/js/common.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/common/js/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/common/js/swiper.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/coupon/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/extend/music/clear.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/group.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/imgs/group_banner.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/clearStorage.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/accountInfo.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/earnings.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/fundsDetails.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/gzh.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/gzh.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/earning_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/info_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/invite.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/invite_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/juese.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/list_icon1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/list_icon2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/list_icon3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/list_icon4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/none_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/vip_btn_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/vip_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/imgs/wallet_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/inviteRecord.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/js/bank.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/myOrder.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/personal.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/wallet.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/gzh/withdraw.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/bg_upper.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/code_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course2_bg1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course2_bg2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course2_bg3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course3_icon1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course3_icon2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course3_icon3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course3_icon4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/course_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/download_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/login_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/order_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/pay_a.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/pay_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/pay_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/phone_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/qrcode_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/share1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/share_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/share_bg2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/share_ft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/suc_ft.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/teacher_code.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/title_icon_left.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/imgs/title_icon_right.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/js/index.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/js/login.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/login.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/order.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/paySuc.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/purchase.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/purchase.less" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/rules.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mini_pay/purchase/share.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/bg1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/code_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/coupon_30days.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/coupon_cash.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/coupon_vip.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/download_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/form_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/gift_box.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/hd_content_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/hd_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/hd_title.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/list_tips_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/logo 2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/phone_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/prize_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/prize_tag2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/result_ft_title.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/month_card/imgs/text_reading.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/assets/imgs/code_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/assets/imgs/phone_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/indexOld.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory/rankinglist.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/.gitignore" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/b_report.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/9890.mp3" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/BG.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/bg1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/bg2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/bgbook_s.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/bofang_btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/bofang_btn_disable.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/download.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/download_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/head.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/more_book.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/newbook.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/play.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/read_btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/score.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/stop.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/zan.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/images/zan_disable.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/index2.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/js/common.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/js/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/js/swiper.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/js/utils.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/rankinglist.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/report.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/images/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/images/btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/images/img1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/images/img2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/images/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/images/new.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/images/title_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/imgs/audio_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/imgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/imgs/content_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/imgs/pause.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/imgs/play.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/imgs/stamp.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/js.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/static/report.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/story.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/story2.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../h5/mystory2/styles/swiper.min.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/.idea/homepage.iml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/.idea/modules.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/.idea/workspace.xml" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/.vscode/settings.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/agreement.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/autorenew.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/autorenew_en.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/class_report.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/download.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/feature.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/index.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/payment.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/purchaseagreement.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/rank.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/rankings.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/reading_guidance.html" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/class.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/a_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/b_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/c_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/head_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/title_1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/title_2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/title_3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/classImgs/title_4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/center.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/left_bottom.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/left_top.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/right_bottom.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/right_top.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/download/url.json" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/ABCtime_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/about_us.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/button_download.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/contact_us.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/download_tag.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/duizhan_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/homepage.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/product.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/rank_library.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/rank_new.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/rank_preview.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/shoucang_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/slide1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/slide2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/slide3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/trailer_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/tuijian_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/wechat.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/zhuolu_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/images/zhuti_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/abc7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/about_us_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/address.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/alert_close.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/code_box.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/contact_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/download_alert_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/download_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/download_code1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/download_code2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/foot_img.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/h5_download_btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/h5_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/hp_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/hp_select.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/mini_code.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/nav_a.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/nav_b.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/nav_c.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/nav_logo.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/no1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/no2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/no3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/no4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/pro00.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/product01.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/product02.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/product03.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/product04.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/skye_code.jpeg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/slide1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/slide2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/toTop_btn.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/us_title_bg.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/video_play.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/imgs/wechat_code.jpg" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/jquery.min.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/js.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/alipay_1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/alipay_2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/alipay_3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/alipay_8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/appstore_icon.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/card_1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/card_2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/card_3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/card_4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/card_9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/head_img.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/nav_alipay.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/nav_card.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/nav_wechat.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_1.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_2.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_3.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_4.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_5.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_6.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_7.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_8.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/payImgs/weixin_9.png" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/paySty.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/slide.js" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/style.css" />
+      <change beforePath="" afterPath="$PROJECT_DIR$/../../homepage/static/xieyi.css" />
+    </list>
+    <ignored path="$PROJECT_DIR$/.tmp/" />
+    <ignored path="$PROJECT_DIR$/temp/" />
+    <ignored path="$PROJECT_DIR$/tmp/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="TRACKING_ENABLED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="proj" />
+  </component>
+  <component name="FileEditorManager">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="common.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/common.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="95">
+              <caret line="5" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="2" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="build.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/build.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1102">
+              <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utils.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/utils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="741">
+              <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="16" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.prod.conf.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/webpack.prod.conf.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="15" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="webpack.dev.conf.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/build/webpack.dev.conf.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="380">
+              <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Pay.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Pay.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="10108">
+              <caret line="805" column="3" lean-forward="false" selection-start-line="805" selection-start-column="3" selection-end-line="805" selection-end-column="3" />
+              <folding>
+                <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="e#9787#10886#0" expanded="false" />
+                <element signature="e#15011#17815#0" expanded="false" />
+                <element signature="e#27693#31187#0" expanded="false" />
+                <element signature="e#32410#33538#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Index.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/Index.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2508">
+              <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+              <folding>
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+                <element signature="e#5751#6142#0" expanded="false" />
+                <element signature="e#6258#6505#0" expanded="false" />
+                <element signature="e#6522#6572#0" expanded="false" />
+                <element signature="e#6587#6636#0" expanded="false" />
+                <element signature="e#6942#7247#0" expanded="false" />
+                <element signature="e#7272#7756#0" expanded="false" />
+                <element signature="e#7777#9462#0" expanded="false" />
+                <element signature="e#9482#9882#0" expanded="false" />
+                <element signature="e#9905#10536#0" expanded="false" />
+                <element signature="e#10555#11654#0" expanded="false" />
+                <element signature="e#11679#13653#0" expanded="false" />
+                <element signature="e#16592#16707#0" expanded="false" />
+                <element signature="e#17016#17091#0" expanded="false" />
+                <element signature="e#17110#24011#0" expanded="false" />
+                <element signature="e#17364#17566#0" expanded="false" />
+                <element signature="e#18224#18398#0" expanded="false" />
+                <element signature="e#18423#19515#0" expanded="false" />
+                <element signature="e#19561#19660#0" expanded="false" />
+                <element signature="e#22228#22860#0" expanded="false" />
+                <element signature="e#26536#27455#0" expanded="false" />
+                <element signature="e#30036#31164#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Poster.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/Poster.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="855">
+              <caret line="69" column="86" lean-forward="false" selection-start-line="69" selection-start-column="86" selection-end-line="69" selection-end-column="86" />
+              <folding>
+                <element signature="n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>365</find>
+      <find>ans_box</find>
+      <find>console.log</find>
+      <find>this.$axios.post</find>
+      <find>基础</find>
+      <find>act_id</find>
+      <find>switchNav</find>
+      <find>getCourseInfo</find>
+      <find>poster</find>
+      <find>course</find>
+      <find>index_content</find>
+      <find>replace</find>
+      <find>https://qnfile.abctime.com/extend/letter/letter_share.png</find>
+      <find>.31rem</find>
+      <find>7.09</find>
+      <find>sign_key</find>
+      <find>ft2</find>
+      <find>团长</find>
+      <find>groupIng</find>
+      <find>memberArr</find>
+      <find>shareConfig</find>
+      <find>is_self</find>
+      <find>backcollage</find>
+      <find>.price</find>
+      <find>.18rem</find>
+      <find>haveGroup</find>
+      <find>selfHaveGroup</find>
+      <find>source</find>
+      <find>sourceMap</find>
+      <find>ejectStatus</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>../assets/imgs</replace>
+      <replace>../assets/imgs/</replace>
+      <replace>part3</replace>
+      <replace>audioSrc</replace>
+      <replace>code</replace>
+      <replace>product_name</replace>
+      <replace>extendAbc</replace>
+      <replace>extend/letter/index</replace>
+      <replace>index</replace>
+      <replace>30deg</replace>
+      <replace>perfectAudio</replace>
+      <replace>game_ans_box</replace>
+      <replace>Lesson</replace>
+      <replace>videoScript</replace>
+    </replaceStrings>
+    <dirStrings>
+      <dir>$PROJECT_DIR$/dist/static/js</dir>
+      <dir>$PROJECT_DIR$/build</dir>
+      <dir>$PROJECT_DIR$/dist</dir>
+      <dir>$PROJECT_DIR$</dir>
+      <dir>$PROJECT_DIR$/src/components/lesson</dir>
+      <dir>$PROJECT_DIR$/src/assets</dir>
+      <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$/src/components</dir>
+      <dir>$PROJECT_DIR$/dist/static</dir>
+    </dirStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/components/HelloWorld.vue" />
+        <option value="$PROJECT_DIR$/build/webpack.dev.conf.js" />
+        <option value="$PROJECT_DIR$/build/utils.js" />
+        <option value="$PROJECT_DIR$/src/components/CommonContent.vue" />
+        <option value="$PROJECT_DIR$/build/webpack.base.conf.js" />
+        <option value="$PROJECT_DIR$/src/components/ListOne.vue" />
+        <option value="$PROJECT_DIR$/src/components/Info.vue" />
+        <option value="$PROJECT_DIR$/src/components/InfoContent.vue" />
+        <option value="$PROJECT_DIR$/src/components/ListThree.vue" />
+        <option value="$PROJECT_DIR$/src/components/DownloadFooter.vue" />
+        <option value="$PROJECT_DIR$/src/components/List.vue" />
+        <option value="$PROJECT_DIR$/src/components/ListTwo.vue" />
+        <option value="$PROJECT_DIR$/src/utils/content.js" />
+        <option value="$PROJECT_DIR$/src/components/ShareToast.vue" />
+        <option value="$PROJECT_DIR$/dist/collage.html" />
+        <option value="$PROJECT_DIR$/src/components/Order.vue" />
+        <option value="$PROJECT_DIR$/src/components/Collage.vue" />
+        <option value="$PROJECT_DIR$/src/components/Catalog.vue" />
+        <option value="$PROJECT_DIR$/src/components/Suc.vue" />
+        <option value="$PROJECT_DIR$/src/components/common/Poster.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Feed.vue" />
+        <option value="$PROJECT_DIR$/src/components/Eject.vue" />
+        <option value="$PROJECT_DIR$/src/utils/share.js" />
+        <option value="$PROJECT_DIR$/src/components/lesson/End.vue" />
+        <option value="$PROJECT_DIR$/src/components/Hv.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Finish.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Perfect.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Drag.vue" />
+        <option value="$PROJECT_DIR$/src/components/End.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Part2.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Part.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Part3.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Transition.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Part5.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Part4.vue" />
+        <option value="$PROJECT_DIR$/src/App.vue" />
+        <option value="$PROJECT_DIR$/src/main.js" />
+        <option value="$PROJECT_DIR$/src/components/Login.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Part1.vue" />
+        <option value="$PROJECT_DIR$/src/router/index.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Lesson.vue" />
+        <option value="$PROJECT_DIR$/src/components/lesson/Catalog.vue" />
+        <option value="$PROJECT_DIR$/src/components/Pay.vue" />
+        <option value="$PROJECT_DIR$/config/index.js" />
+        <option value="$PROJECT_DIR$/src/utils/common.js" />
+        <option value="$PROJECT_DIR$/src/components/Poster.vue" />
+        <option value="$PROJECT_DIR$/dist/index.html" />
+        <option value="$PROJECT_DIR$/src/components/Index.vue" />
+      </list>
+    </option>
+  </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
+  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER">
+    <package-json value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="JsGulpfileManager">
+    <detection-done>true</detection-done>
+    <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="NodeModulesDirectoryManager">
+    <handled-path value="$PROJECT_DIR$/node_modules" />
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="y" value="23" />
+    <option name="width" value="1440" />
+    <option name="height" value="877" />
+  </component>
+  <component name="ProjectInspectionProfilesVisibleTreeState">
+    <entry key="Project Default">
+      <profile-state>
+        <expanded-state>
+          <State>
+            <id />
+          </State>
+        </expanded-state>
+        <selected-state>
+          <State>
+            <id>AngularJS</id>
+          </State>
+        </selected-state>
+      </profile-state>
+    </entry>
+  </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectView">
+    <navigator currentView="ProjectPane" proportions="" version="1">
+      <flattenPackages />
+      <showMembers />
+      <showModules />
+      <showLibraryContents />
+      <hideEmptyPackages />
+      <abbreviatePackageNames />
+      <autoscrollToSource />
+      <autoscrollFromSource />
+      <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="365天通识课" type="b2602c69:ProjectViewProjectNode" />
+              <item name="365天通识课" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="365天通识课" type="b2602c69:ProjectViewProjectNode" />
+              <item name="365天通识课" type="462c0819:PsiDirectoryNode" />
+              <item name="dist" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="365天通识课" type="b2602c69:ProjectViewProjectNode" />
+              <item name="365天通识课" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="365天通识课" type="b2602c69:ProjectViewProjectNode" />
+              <item name="365天通识课" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="365天通识课" type="b2602c69:ProjectViewProjectNode" />
+              <item name="365天通识课" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="standardjs.codestyle.accepted" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/imgs" />
+      <recent name="$PROJECT_DIR$/src/components/lesson" />
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/utils" />
+      <recent name="$PROJECT_DIR$/src/components/common" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+      <recent name="$PROJECT_DIR$/src/components/lesson" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="ShelveChangesManager" show_recycled="false">
+    <option name="remove_strategy" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b768f55-bfe4-44f6-96bc-f9ab5f9b463b" name="Default" comment="" />
+      <created>1550112231314</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1550112231314</updated>
+      <workItem from="1550112232581" duration="11346000" />
+      <workItem from="1550197946405" duration="3315000" />
+      <workItem from="1550543842773" duration="15277000" />
+      <workItem from="1550628876894" duration="19125000" />
+      <workItem from="1550717884198" duration="16235000" />
+      <workItem from="1550801097279" duration="9076000" />
+      <workItem from="1551062835320" duration="21133000" />
+      <workItem from="1551146892604" duration="9015000" />
+      <workItem from="1551179458149" duration="191000" />
+      <workItem from="1551233925073" duration="2229000" />
+      <workItem from="1551253620417" duration="3257000" />
+      <workItem from="1551337282075" duration="884000" />
+      <workItem from="1551341915647" duration="2294000" />
+      <workItem from="1551433162654" duration="1246000" />
+      <workItem from="1551666607198" duration="6704000" />
+      <workItem from="1551753105411" duration="8917000" />
+      <workItem from="1551865593549" duration="2518000" />
+      <workItem from="1551927704846" duration="21012000" />
+      <workItem from="1552011498396" duration="6577000" />
+      <workItem from="1552270118777" duration="59000" />
+      <workItem from="1552273017590" duration="18992000" />
+      <workItem from="1552307435950" duration="38000" />
+      <workItem from="1552307886080" duration="1352000" />
+      <workItem from="1552356728846" duration="6728000" />
+      <workItem from="1552371945196" duration="5527000" />
+      <workItem from="1552446575285" duration="11688000" />
+      <workItem from="1552530798714" duration="2272000" />
+      <workItem from="1552547605718" duration="2902000" />
+      <workItem from="1552562222490" duration="1369000" />
+      <workItem from="1552616346503" duration="4092000" />
+      <workItem from="1552877057320" duration="171000" />
+      <workItem from="1552878721433" duration="4479000" />
+      <workItem from="1552897017663" duration="540000" />
+      <workItem from="1552964686050" duration="4657000" />
+      <workItem from="1552986408213" duration="1276000" />
+      <workItem from="1552989934727" duration="1386000" />
+      <workItem from="1553047822955" duration="2842000" />
+      <workItem from="1553127649405" duration="5531000" />
+      <workItem from="1553137446736" duration="666000" />
+      <workItem from="1553145042058" duration="232000" />
+      <workItem from="1553513625228" duration="371000" />
+      <workItem from="1553670380353" duration="6648000" />
+      <workItem from="1554088312701" duration="16558000" />
+      <workItem from="1554188188149" duration="11301000" />
+      <workItem from="1554261220591" duration="17606000" />
+      <workItem from="1554347476882" duration="14233000" />
+      <workItem from="1554689343305" duration="24320000" />
+      <workItem from="1554776574160" duration="5657000" />
+      <workItem from="1554791499234" duration="18226000" />
+      <workItem from="1554861933185" duration="18243000" />
+      <workItem from="1554949615738" duration="16514000" />
+      <workItem from="1555035781570" duration="2036000" />
+      <workItem from="1555040292697" duration="15106000" />
+      <workItem from="1555068510474" duration="4354000" />
+      <workItem from="1555467908741" duration="287000" />
+      <workItem from="1555560059700" duration="10464000" />
+      <workItem from="1555899758970" duration="3953000" />
+      <workItem from="1555927957251" duration="3012000" />
+      <workItem from="1556009915023" duration="2018000" />
+      <workItem from="1556073853667" duration="569000" />
+      <workItem from="1556160200623" duration="1851000" />
+      <workItem from="1557127712110" duration="5932000" />
+      <workItem from="1557196725476" duration="13632000" />
+      <workItem from="1557282503151" duration="1156000" />
+      <workItem from="1557302264784" duration="7097000" />
+      <workItem from="1557381653990" duration="5595000" />
+      <workItem from="1557404270433" duration="411000" />
+      <workItem from="1557715111968" duration="13185000" />
+      <workItem from="1557800009013" duration="12633000" />
+      <workItem from="1557887777008" duration="897000" />
+      <workItem from="1557905081598" duration="1672000" />
+      <workItem from="1557986905707" duration="9896000" />
+      <workItem from="1558079272853" duration="3092000" />
+      <workItem from="1558318513879" duration="9719000" />
+      <workItem from="1558598441121" duration="1101000" />
+      <workItem from="1558947114712" duration="8984000" />
+      <workItem from="1559011592455" duration="877000" />
+      <workItem from="1559024151630" duration="13620000" />
+      <workItem from="1559047236467" duration="487000" />
+      <workItem from="1559099125516" duration="12657000" />
+      <workItem from="1559199408713" duration="8912000" />
+      <workItem from="1559533410229" duration="1461000" />
+      <workItem from="1559546361433" duration="186000" />
+      <workItem from="1559616497527" duration="13990000" />
+      <workItem from="1559701993468" duration="3545000" />
+      <workItem from="1559720174839" duration="1227000" />
+      <workItem from="1560160624280" duration="845000" />
+      <workItem from="1560394924810" duration="121000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="583407000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21705426" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2636034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2636034" sideWeight="0.4947146" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+    </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286991" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2636034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2636034" sideWeight="0.4947146" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="TypeScript" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23608175" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32769045" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980973" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+    </layout-to-restore>
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/components/Poster.vue</url>
+          <line>326</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/router/index.js</url>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="20" />
+    </breakpoint-manager>
+    <watches-manager />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/tag_a.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/bg_def.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/part_item_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/bg_ed.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Trans.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/Hv.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/end_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/End.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="42" column="10" lean-forward="false" selection-start-line="16" selection-start-column="4" selection-end-line="42" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Catalog1.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/Suc.vue" />
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1634">
+          <caret line="86" column="14" lean-forward="false" selection-start-line="86" selection-start-column="14" selection-end-line="86" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Part5.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Transition.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Part2.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Part4.vue" />
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Part3.vue" />
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_info.png" />
+    <entry file="file://$PROJECT_DIR$/src/components/InfoContent.vue" />
+    <entry file="file://$PROJECT_DIR$/src/App.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="34" column="21" lean-forward="false" selection-start-line="34" selection-start-column="21" selection-end-line="34" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/share.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/poster_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Part.vue" />
+    <entry file="file://$PROJECT_DIR$/src/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="25" column="8" lean-forward="true" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Perfect.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="546">
+          <caret line="31" column="14" lean-forward="false" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/router/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-280">
+          <caret line="6" column="46" lean-forward="false" selection-start-line="6" selection-start-column="46" selection-end-line="6" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/lesson_hd.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Eject.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_share_hd.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_share_bd.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_info1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_info2_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_info2_2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_con_bg.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_info3.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_con2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/imgs/index_con1_1.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Lesson.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="178">
+          <caret line="276" column="20" lean-forward="false" selection-start-line="276" selection-start-column="19" selection-end-line="276" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/lesson/Catalog.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="262">
+          <caret line="208" column="23" lean-forward="true" selection-start-line="208" selection-start-column="23" selection-end-line="208" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="12" lean-forward="false" selection-start-line="11" selection-start-column="12" selection-end-line="11" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Login.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="28" column="11" lean-forward="false" selection-start-line="28" selection-start-column="11" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/ShareToast.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Pay.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="10108">
+          <caret line="805" column="3" lean-forward="false" selection-start-line="805" selection-start-column="3" selection-end-line="805" selection-end-column="3" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#9787#10886#0" expanded="false" />
+            <element signature="e#15011#17815#0" expanded="false" />
+            <element signature="e#27693#31187#0" expanded="false" />
+            <element signature="e#32410#33538#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.dev.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="30" lean-forward="false" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/utils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="741">
+          <caret line="39" column="16" lean-forward="false" selection-start-line="39" selection-start-column="10" selection-end-line="39" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/webpack.prod.conf.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="380">
+          <caret line="20" column="15" lean-forward="false" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/build/build.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="10" lean-forward="false" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1102">
+          <caret line="58" column="30" lean-forward="false" selection-start-line="58" selection-start-column="30" selection-end-line="58" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="95">
+          <caret line="5" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="5" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/Poster.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="855">
+          <caret line="69" column="86" lean-forward="false" selection-start-line="69" selection-start-column="86" selection-end-line="69" selection-end-column="86" />
+          <folding>
+            <element signature="n#div#2;n#div#0;n#template#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/dist/index.html" />
+    <entry file="file://$PROJECT_DIR$/src/components/Index.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2508">
+          <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="239" selection-end-column="0" />
+          <folding>
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="n#div#2;n#div#0;n#div#0;n#div#0;n#template#0;n#!!top" expanded="false" />
+            <element signature="e#5751#6142#0" expanded="false" />
+            <element signature="e#6258#6505#0" expanded="false" />
+            <element signature="e#6522#6572#0" expanded="false" />
+            <element signature="e#6587#6636#0" expanded="false" />
+            <element signature="e#6942#7247#0" expanded="false" />
+            <element signature="e#7272#7756#0" expanded="false" />
+            <element signature="e#7777#9462#0" expanded="false" />
+            <element signature="e#9482#9882#0" expanded="false" />
+            <element signature="e#9905#10536#0" expanded="false" />
+            <element signature="e#10555#11654#0" expanded="false" />
+            <element signature="e#11679#13653#0" expanded="false" />
+            <element signature="e#16592#16707#0" expanded="false" />
+            <element signature="e#17016#17091#0" expanded="false" />
+            <element signature="e#17110#24011#0" expanded="false" />
+            <element signature="e#17364#17566#0" expanded="false" />
+            <element signature="e#18224#18398#0" expanded="false" />
+            <element signature="e#18423#19515#0" expanded="false" />
+            <element signature="e#19561#19660#0" expanded="false" />
+            <element signature="e#22228#22860#0" expanded="false" />
+            <element signature="e#26536#27455#0" expanded="false" />
+            <element signature="e#30036#31164#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+    </states>
+  </component>
+</project>
