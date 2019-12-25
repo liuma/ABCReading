@@ -9,7 +9,6 @@
                 <p class="user_info">{{userInfo.name}}<span>{{userInfo.phone}}</span></p>
                 <div class="address_info">
                   {{userInfo.province}}{{userInfo.city}}{{userInfo.area}}{{userInfo.address}}
-                  <!-- 北京市海淀区知春路2号知春嘉园3层学而思网络科技ABC Reading项目组 -->
                 </div>
           </div>
           <div class="suc_box">
@@ -22,6 +21,8 @@
 
               <div class="btn_add" @click="toDownload()">开始学习之旅</div>
           </div>
+          <p class="kf_txt">如有疑问，可联系小助手<br/>
+            微信号：ABCReading006</p>
       </div>
       <div v-else class="address_content">
           <div class="list_box">
@@ -40,7 +41,7 @@
                     </li>
                     <li>
                         <span class="li_title">所在地区</span>
-                        <div class="li_content area" @click="isShowProvince=!isShowProvince">
+                        <div class="li_content area" @click="controlProvince()">
                             <div class="input_group province_txt">
                                 {{userInfo.province_name}} {{userInfo.city_name}} {{userInfo.area_name}}
                             </div>
@@ -55,13 +56,14 @@
                     </li>
                 </ul>  
                 <div class="distinguish_box">
-                    <textarea id="" rows="5" v-model="distinguishText" placeholder="请输入或粘贴地址文本，自动识别姓名、电话和地址，如：张三，18012345678，浙江省杭州市余杭区五常街道乐嘉国际3号"></textarea>
+                    <textarea id="" rows="5" v-model="distinguishText" @focus="focus" @blur="blur" placeholder="请输入或粘贴地址文本，自动识别姓名、电话和地址，如：张三，18012345678，浙江省杭州市余杭区五常街道乐嘉国际3号"></textarea>
                     <div class="btn_group">
                         <img class="delete" src="../assets/images/address_delete_tag.png" @click="distinguishText=''">
                         <img class="distinguish" src="../assets/images/address_distinguish_tag.png" @click="distinguish()">
                     </div>
                 </div>
                 <div class="divwrap" v-show="isShowProvince" >
+                    <!-- <v-distpicker type="mobile" @selected="onSelected" :province="userInfo.province_name" :city="userInfo.city_name" :area="userInfo.area_name"></v-distpicker> -->
                     <v-distpicker type="mobile" @selected="onSelected" :province="userInfo.province_name" :city="userInfo.city_name" :area="userInfo.area_name"></v-distpicker>
                 </div>
                 <div class="btn_submit" @click="submitAddress()">提交</div>
@@ -112,6 +114,7 @@ export default {
         },
         isShowProvince:false, 
         distinguishText:'',
+        is_select: true
     }
   },
   created(){
@@ -126,30 +129,76 @@ export default {
   },
   methods: {
     distinguish(){
+        this.is_select = false;
         let resObj = distinguish.parseAddr(this.distinguishText);
         console.log('resObj:',resObj);
-        this.userInfo.province_name = resObj.province
-        this.userInfo.city_name = resObj.city
-        this.userInfo.area_name = resObj.area
-        this.userInfo.name = resObj.name
-        this.userInfo.phone = resObj.mobile
-        this.userInfo.address = resObj.addr
+        // return;
+        if(resObj.province_id){
+            this.userInfo.province_name = resObj.province
+            this.userInfo.province_id = resObj.province_id
+            if(resObj.city_id){
+                this.userInfo.city_name = resObj.city
+                this.userInfo.city_id = resObj.city_id
+                if(resObj.area){
+                    console.log(resObj.area);
+                    this.userInfo.area_name = resObj.area
+                }else {
+                    this.userInfo.area_name = '';
+                }
+            }
+        }
+        // this.userInfo.province_name = resObj.province
+        // this.userInfo.province_id = resObj.province_id
+        // this.userInfo.city_name = resObj.city
+        // this.userInfo.city_id = resObj.city_id
+        // this.userInfo.area_name = resObj.area
+
+        // this.userInfo.area_id = resObj.area_id
+        if(resObj.name){
+            this.userInfo.name = resObj.name
+        }
+        if(resObj.mobile){
+            this.userInfo.phone = resObj.mobile
+        }
+        if(resObj.addr){
+            this.userInfo.address = resObj.addr
+        }
+        // this.userInfo.name = resObj.name
+        // this.userInfo.phone = resObj.mobile
+        // this.userInfo.address = resObj.addr
     },
     toDownload(){
         window.location.href = 'http://www.abctime.com/download.html?source_id=renewal'
+          _hmt.push(['_trackEvent', 'button', 'click', '地址-开始学习']);
         // console.log('toDownload');
     },
     toAddress(){
         console.log('toAddress');
     },
+    controlProvince(){
+        this.isShowProvince=!this.isShowProvince;
+        this.is_select = true;
+    },
     onSelected(data) {
-      this.userInfo.province_name = data.province.value
-      this.userInfo.province_id = data.province.code
-      this.userInfo.city_name = data.city.value
-      this.userInfo.city_id = data.city.code
-      this.userInfo.area_name = data.area.value
-      this.userInfo.area_id = data.area.code
-      this.isShowProvince = false
+        console.log(data);
+        let zxCodeArr = ['100000', '110000', '120000', '130000'];
+        let zxCityArr = ['101000', '111000', '121000', '131000'];
+        if(data.area.code){
+            this.userInfo.area_id = data.area.code
+        }
+        if(zxCodeArr.indexOf(data.city.code)>=0){
+            let ind = zxCodeArr.indexOf(data.city.code);
+            data.city.code = zxCityArr[ind];
+        }
+        if(this.is_select && data.city.code && data.province.code && data.area.code){
+            this.userInfo.province_name = data.province.value
+            this.userInfo.province_id = data.province.code
+            this.userInfo.city_name = data.city.value
+            this.userInfo.city_id = data.city.code
+            this.userInfo.area_name = data.area.value
+            this.userInfo.area_id = data.area.code
+            this.isShowProvince = false
+        }
     },
     getAddress(){
         let openid = window.localStorage.getItem('extendAbcOpenid')
@@ -158,16 +207,27 @@ export default {
         let fd = this.$common.getParam('get',{openid:openid,member_id:memberId});
         this.$axios.get(addressUrl+'?'+fd).then((res) => {
             if(res.data.code == 200 && res.data.data.phone){
-                this.hasSubmit = true; 
                 this.userInfo = res.data.data;
-                console.log(this.userInfo)               
-                // this.userInfo.province_name = res.data.data.province;               
-                // this.userInfo.city_name = res.data.data.city;               
-                // this.userInfo = res.data.data.area;               
+                this.userInfo.province_name = res.data.data.province;               
+                this.userInfo.city_name = res.data.data.city;               
+                this.userInfo.area_name = res.data.data.area; 
+                this.userInfo.address = res.data.data.address;               
+                this.userInfo.phone = res.data.data.phone;               
+                this.userInfo.name = res.data.data.name;               
+                if(res.data.data.order_have_address == 1){
+                    this.hasSubmit = true; 
+                }              
             }
         })
     },
+    blur(){
+        window.scrollTo(0, 0);
+    },
+    focus(){
+        this.isShowProvince = false;
+    },
     submitAddress(){
+        console.log(this.userInfo);
         if(!this.userInfo.name){
             this.showEject('请输入收货人姓名');
             return
@@ -177,7 +237,15 @@ export default {
             return
         }
         if(!this.userInfo.province_name){
-            this.showEject('请选择地区');
+            this.showEject('请选择所在省');
+            return
+        }
+        if(!this.userInfo.city_name){
+            this.showEject('请选择所在市');
+            return
+        }
+        if(!this.userInfo.area_name){
+            this.showEject('请选择所在区');
             return
         }
         if(this.userInfo.province_id == 100001){
@@ -187,7 +255,6 @@ export default {
             this.showEject('请输入详细地址');
             return
         }
-
         let fdObj = this.userInfo;
         let member_id = localStorage.getItem('extendAbcMemberid'),openid = localStorage.getItem('extendAbcOpenid');
         fdObj.member_id = member_id;
@@ -195,6 +262,8 @@ export default {
         if(fdObj.province){delete fdObj.province;}
         if(fdObj.city){delete fdObj.city;}
         if(fdObj.area){delete fdObj.area;}
+        console.log(fdObj);
+        // return;
         let _this = this;
         let fd = this.$common.getParam('get',fdObj);
         let orderUrl = this.$common.config.gzhUrl + 'v3/member/gift-bag/edit-address'
@@ -206,7 +275,8 @@ export default {
             }else{
                 _this.showEject(res.data.msg)
             }
-        })
+        });
+        _hmt.push(['_trackEvent', 'button', 'click', '地址-提交']);
     },
     showEject: function (text) {
       this.ejectText = text
@@ -291,7 +361,7 @@ export default {
                     .li_content{
                         padding-left: 2.17rem;
                         input,select,textarea{
-                            line-height: 1;
+                            // line-height: 1;
                             width: 4rem;
                             background: #301DA0;
                             font-family: FZY4JW--GB1-0;
@@ -517,6 +587,13 @@ export default {
                 position: relative;
                 z-index: 10;
             }
+        }
+        .kf_txt{
+            font-family: FZY4JW--GB1-0;
+            font-size: .24rem;
+            color: #696CDB;
+            letter-spacing: .014rem;
+            padding: .3rem 0 0;
         }
     }
     .divwrap{

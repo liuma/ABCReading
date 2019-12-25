@@ -66,7 +66,6 @@
             <li><img src="../assets/imgs/index_qa3.png"></li>
             <li><img src="../assets/imgs/index_qa4.png"></li>
           </ul>
-          <img src="../assets/imgs/index_mm.png" class="index_mm">
         </div>
         <div class="tag">本课程由ABC Reading&励步英语联合出品</div>
       </div>
@@ -76,8 +75,8 @@
           <span class="price">立即参团 ¥9.90</span>
         </div>
       </footer>
+      <div class="ft2" v-show="!direct_buy && !is_full&&groupIng" @click="toPay()">拼团中...</div>
       <div class="ft2" v-show="direct_buy || (is_full&&groupIng)" @click="toStudy()">已购买 立即开始学习</div>
-      <div class="ft2" v-show="!is_full&&groupIng" @click="toPay()">拼团中...</div>
     </div>
     <eject :message="ejectText" :showState="ejectStatus"></eject>
     <hv></hv>

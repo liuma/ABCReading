@@ -21,7 +21,8 @@
           <input id="code" type="tel" v-model="code" @input="checkPh" @focus="focus" @blur="blur" maxlength="6" placeholder="请输入验证码">
           <div :class="{'send':true,'active':canSend}" @click="getCode">{{sendText}}</div>
         </div>
-        <div :class="loginStatus?'btn active':'btn'" @click="bindPhone"><span class="icon"></span><span>登录</span></div>
+        <div style="width: 70vw;margin:auto;" id="captcha"></div>
+        <div :class="loginStatus?'btn active':'btn'" @click="getUcCode"><span class="icon"></span><span>登录</span></div>
       </div>
       <p class="tips">备注：拼团成功后仅拼团付款人微信账号可学习课程</p>
       <div class="ft_box" v-show="blurFlag"></div>
@@ -56,7 +57,8 @@ export default {
       sendText: '获取验证码',
       time:0,
       telDis:false,
-      blurFlag: true
+      blurFlag: true,
+      canLogin: true
     }
   },
   created(){
@@ -71,14 +73,22 @@ export default {
     toRules(){
         location.href = window.location.origin + '/mystory/rules.html'
     },
-    bindPhone(){
-      if(this.loginStatus){
+    getUcCode(){
+        if(this.loginStatus){
+            let phone_num = this.tel;
+            let code = this.code;
+            let ucCode = this.$common.ucLogin(phone_num,code,this);
+        }
+    },
+    bindPhone(ucCode){
+      if(this.loginStatus && this.canLogin){
+        this.canLogin = false;
         let phone_num = this.tel
-        let code = this.code
+        let code = ucCode
         let member_id = window.localStorage.getItem('extendAbcMemberid')
         let openid = window.localStorage.getItem('extendAbcOpenid')
         let productId = 113
-        let fd = this.$common.getParam('get',{phone:phone_num,code:code,member_id:member_id,open_id:openid,product_id:productId})
+        let fd = this.$common.getParam('get',{code:code,member_id:member_id,openid:openid,product_id:productId})
         let actionUrl = this.$common.config.gzhUrl + 'v3/member/passport/bind-phone'
         let _this = this
         let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
@@ -93,6 +103,7 @@ export default {
           }else{
             _this.showEject(res.data.msg)
           }
+          _this.canLogin = true;
         })
       }
     },
@@ -162,27 +173,132 @@ export default {
         this.loginStatus = false
       }
     },
+    getUcCode(){
+        if(this.loginStatus){
+            let phone_num = this.tel;
+            let code = this.code;
+            let ucCode = this.$common.ucLogin(phone_num,code,this);
+        }
+    },
+    bindPhone(ucCode){
+      if(this.loginStatus && this.canLogin){
+          this.canLogin = false;
+        let phone_num = this.tel
+        let code = ucCode
+        let member_id = window.localStorage.getItem('extendAbcMemberid')
+        let openid = window.localStorage.getItem('extendAbcOpenid')
+        let source_id = 109;
+        let act_id = 4;
+        let productId = 110
+        let fd = this.$common.getParam('get',{code:ucCode,member_id:member_id,openid:openid,product_id:productId,source_id:source_id,act_id:act_id})
+        let actionUrl = this.$common.config.gzhUrl + 'v3/member/passport/bind-phone'
+        let _this = this
+        let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
+        this.$axios.post(actionUrl,fd,conf).then((res) => {
+          if(res.data.code == 200){
+            window.localStorage.setItem('extendAbcPhone',res.data.data.phone)
+            if(_this.$route.query.buy == 2){
+              _this.$router.push({name:'Pay',query:{type:1}})
+            }else if(_this.$route.query.buy == 1) {
+              _this.originalPay()
+            }
+          }else{
+            _this.showEject(res.data.msg)
+          }
+          _this.canLogin = true;
+        })
+      }
+    },
+    originalPay(){
+      let member_id = localStorage.getItem('extendAbcMemberid')
+      let openid = localStorage.getItem('extendAbcOpenid')
+      let ph = localStorage.getItem('extendAbcPhone')
+      let source_id = 109;
+      let act_id = 4;
+      let fdObj = {member_id:member_id,openid:openid,phone:ph,goods_num:1,
+        total_price:this.goodsObj.original_price,discount_money:this.goodsObj.discount_money,
+        money_paid:this.goodsObj.price,goods_name:this.goodsObj.product_name,
+        payment_type:3,pay_type:3,trade_type:'JSAPI',source_id:source_id,act_id:act_id,is_group:0};
+      fdObj.product_id = this.goodsObj.product_id;
+      fdObj.parent_order_no = 0
+      let _this = this;
+      let fd = this.$common.getParam('get',fdObj);
+      let orderUrl = this.$common.config.gzhUrl + 'v3/pay/order/gzh-add'
+      let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
+      this.$axios.post(orderUrl,fd,conf).then((res) => {
+        if(res.data.code == 200){
+        let da = res.data.data
+        wx.chooseWXPay({
+          timestamp: da.pay.timeStamp, // 支付签名时间戳，注意微信jssdk中的所有使用timestamp字段均为小写。但最新版的支付后台生成签名使用的timeStamp字段名需大写其中的S字符
+          nonceStr: da.pay.nonceStr, // 支付签名随机串，不长于 32 位
+          package: da.pay.package, // 统一支付接口返回的prepay_id参数值，提交格式如：prepay_id=\*\*\*）
+          signType: da.pay.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
+          paySign: da.pay.paySign, // 支付签名
+          success: function (res) {
+            _this.openLesson();
+            _this.showEject('购买成功')
+            _this.$router.push({name:'Index'})
+          }
+        });
+      }else{
+        _this.showEject(res.data.msg)
+      }
+    })
+    },
+    openLesson(){
+      let member_id = localStorage.getItem('extendAbcMemberid'),lesson_id=this.$route.query.id;
+      let wUrl = this.$common.config.gzhUrl + "v3/marketingcourse/course/unlock-lesson"
+      let fd = this.$common.getParam('get', {member_id: member_id,lesson_id:1,course_id:1});
+      this.$axios.get(wUrl+'?'+fd).then((res) => {
+        if(res.data.code == 200){
+      }
+    })
+    },
+    blur(){
+      this.blurFlag = true;
+    },
+    focus(){
+      this.blurFlag = false;
+    },
+    checkPh () {
+      if(this.$common.VL.phNum(this.tel)){
+        if(this.sendText == '获取验证码' || this.sendText == '重新发送'){
+          this.canSend = true
+          this.sendStatus = true
+        }
+        if(this.code.length == 6){
+          this.loginStatus = true
+        } else {
+          this.loginStatus = false
+        }
+      } else {
+        this.canSend = false
+        this.sendStatus = false
+        this.loginStatus = false
+      }
+    },
     getCode: function () {
       let _this = this;
       if(this.sendStatus){
         this.sendStatus = false;
         this.canSend = false;
-        let url = this.$common.config.gzhUrl + 'v2/api/api/send'
-        let fd = this.$common.getParam('get',{phone:this.tel})
-        let _this = this;
-        this.time = 60;
-        this.timer()
-        let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
-        this.$axios.post(url,fd,conf).then(
-          (res) => {
-          if(res.data.code == 200){
-            _this.showEject('发送成功')
-          }else{
-            _this.showEject(res.data.msg)
-          }
-        })
-      }else {
-        _this.showEject('请输入正确的手机号')
+        this.$common.ucSend(this.tel,this);
+        // this.sendStatus = false;
+        // this.canSend = false;
+        // let url = this.$common.config.gzhUrl + 'v2/api/api/send'
+        // let fd = this.$common.getParam('get',{phone:this.tel})
+        // let _this = this;
+        // this.time = 60;
+        // this.timer()
+        // let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
+        // this.$axios.post(url,fd,conf).then(
+        //   (res) => {
+        //   if(res.data.code == 200){
+        //     _this.showEject('发送成功')
+        //   }else{
+        //     _this.showEject(res.data.msg)
+        //   }
+        // })
       }
     },
     showEject: function (text) {

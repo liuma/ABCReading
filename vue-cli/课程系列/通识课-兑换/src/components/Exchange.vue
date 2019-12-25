@@ -29,7 +29,8 @@
           <span class="icon"></span>
           <input id="ex_code" class="ex_input" type="text" v-model="ex_code" @input="checkPh" @focus="focus" @blur="blur" placeholder="请输入课程兑换码">
         </div>
-        <div :class="loginStatus?'btn active':'btn'" @click="bindPhone"><span class="icon"></span><span>立即兑换</span></div>
+        <div style="width: 70vw;margin:auto;" id="captcha"></div>
+        <div :class="loginStatus?'btn active':'btn'" @click="getUcCode"><span class="icon"></span><span>立即兑换</span></div>
       </div>
       <!-- 已兑换 -->
       <div v-else class="form_box">
@@ -121,10 +122,17 @@ export default {
     toStudy(){
         this.$router.push({name:'Cata'})
     },
-    bindPhone(){
+    getUcCode(){
+        if(this.loginStatus){
+            let phone_num = this.tel;
+            let code = this.code;
+            let ucCode = this.$common.ucLogin(phone_num,code,this);
+        }
+    },
+    bindPhone(ucCode){
       if(this.loginStatus){
-        let phone_num = this.tel
-        let code = this.code
+        let phone_num = this.tel;
+        // let code = this.code;
         let member_id = window.localStorage.getItem('extendAbcMemberid')
         let openid = window.localStorage.getItem('extendAbcOpenid');
         let fdObj = {
@@ -136,8 +144,8 @@ export default {
             delete fdObj.phone;
             delete fdObj.code;
         }else{
-            fdObj.phone = this.tel;    
-            fdObj.code = this.code;    
+            // fdObj.phone = this.tel;    
+            fdObj.code = ucCode;    
         }
         let fd = this.$common.getParam('get',fdObj)
         let actionUrl = this.$common.config.gzhUrl + 'v3/group/month-card/gift-card-exchange'
@@ -194,24 +202,24 @@ export default {
       if(this.sendStatus){
         this.sendStatus = false;
         this.canSend = false;
-        let url = this.$common.config.gzhUrl + 'v3/marketingcourse/course/send'
-        let fd = this.$common.getParam('get',{phone:this.tel})
-        let _this = this;
-        this.time = 60;
-        this.timer()
-        let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
-        this.$axios.post(url,fd,conf).then(
-          (res) => {
-          if(res.data.code == 200){
-            _this.showEject('发送成功')
-          }else{
-            _this.tel = "";
-            _this.time = 0;
-            // _this.canSend = true;
-            // _this.sendStatus = false;
-            _this.showDialogs(res.data.msg);
-          }
-        })
+        this.$common.ucSend(this.tel,this);
+
+        // let url = this.$common.config.gzhUrl + 'v3/marketingcourse/course/send'
+        // let fd = this.$common.getParam('get',{phone:this.tel})
+        // let _this = this;
+        // this.time = 60;
+        // this.timer()
+        // let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
+        // this.$axios.post(url,fd,conf).then(
+        //   (res) => {
+        //   if(res.data.code == 200){
+        //     _this.showEject('发送成功')
+        //   }else{
+        //     _this.tel = "";
+        //     _this.time = 0;
+        //     _this.showDialogs(res.data.msg);
+        //   }
+        // })
       }else {
         _this.showEject('请输入正确的手机号')
       }

@@ -83,33 +83,84 @@ const GetRequest = function () {
 //parmas: Object
 //sign_key: dev(test)||master
 //post返回参数对象    get返回参数字符串
-const getParam = function (type,params,sign_key) {
-  sign_key = config.sign_key;
-  var name_arr = [],value_arr=[],p_arr=[],get_arr=[];
-  if(type=='post'){
-    for(var i in params) {
-      name_arr.push(i);
-      value_arr.push(params[i]);
-      if(typeof params[i] != 'object'){
-        p_arr.push(i+params[i]);
-      }
-    };
-    var signStr = p_arr.sort().join('~').replace(/~/g,'')+sign_key;
-    params.sign = SHA256(signStr);
-    return params;
-  }else if(type=='get')
-  {
-    delete params.sign;
-    for(var i in params) {
-      p_arr.push(i+params[i]);
-      get_arr.push(i+'='+params[i]+'&');
-    };
-    var signStr = p_arr.sort().join('~').replace(/~/g,'')+sign_key;
-    var sign = SHA256(signStr);
-    var param = get_arr.sort().join('~').replace(/~/g,'')+'sign='+sign;
-    return param;
-  }
+// const getParam = function (type,params,sign_key) {
+//   sign_key = config.sign_key;
+//   var name_arr = [],value_arr=[],p_arr=[],get_arr=[];
+//   if(type=='post'){
+//     for(var i in params) {
+//       name_arr.push(i);
+//       value_arr.push(params[i]);
+//       if(typeof params[i] != 'object'){
+//         p_arr.push(i+params[i]);
+//       }
+//     };
+//     var signStr = p_arr.sort().join('~').replace(/~/g,'')+sign_key;
+//     params.sign = SHA256(signStr);
+//     return params;
+//   }else if(type=='get')
+//   {
+//     delete params.sign;
+//     for(var i in params) {
+//       p_arr.push(i+params[i]);
+//       get_arr.push(i+'='+params[i]+'&');
+//     };
+//     var signStr = p_arr.sort().join('~').replace(/~/g,'')+sign_key;
+//     var sign = SHA256(signStr);
+//     var param = get_arr.sort().join('~').replace(/~/g,'')+'sign='+sign;
+//     return param;
+//   }
+// }
+
+const getParam = function(type,params,sign_key) {
+    sign_key = config.sign_key;
+    var name_arr = [],value_arr=[],p_arr=[],get_arr=[],nameArr = [];
+    if(!params.version){
+        params.version = 2;
+    }
+    if(type=='post'){
+        for(var i in params) {
+            name_arr.push(i);
+            value_arr.push(params[i]);
+            if(typeof params[i] != 'object'){
+                p_arr.push(i+params[i]);
+                nameArr.push(i);
+            }
+        };
+        var nameSortArr = nameArr.sort(),signStr = '';
+        for(var j in nameSortArr){
+            var s = nameSortArr[j] + params[nameSortArr[j]];
+            signStr += s
+        };
+        signStr += sign_key;
+        // var signStr = p_arr.sort().join('~').replace(/~/g,'')+sign_key;
+        console.log('post----'+signStr);
+
+        params.sign = SHA256(signStr);
+        return params;
+    }else if(type=='get')
+    {
+        delete params.sign;
+        for(var i in params) {
+            p_arr.push(i+params[i]);
+            get_arr.push(i+'='+params[i]+'&');
+            nameArr.push(i);
+        };
+        var nameSortArr = nameArr.sort(),signStr = '';
+        for(var j in nameSortArr){
+            var s = nameSortArr[j] + params[nameSortArr[j]];
+            signStr += s
+        };
+        signStr += sign_key;
+
+        // var signStr = p_arr.sort().join('~').replace(/~/g,'')+sign_key;
+        console.log('get----'+signStr);
+        var sign = SHA256(signStr);
+        var param = get_arr.sort().join('~').replace(/~/g,'')+'sign='+sign;
+        return param;
+    }
 }
+
+
 //SHA256加密
 function SHA256 (s){
   var chrsz = 8;
@@ -285,5 +336,79 @@ const fixTop = function(obj) {
     obj.setAttribute("data-fixed",st >= ot?"fixed":"");
   }
 }
-export default{config:config,VL:VL,getParam:getParam,GetRequest:GetRequest,timestampToTime:timestampToTime,fixTop:fixTop,share:share}
+// 用户中心
+// 发送验证码
+const ucSend = function(ph,$this) {
+    var sendParams = {
+        data: {
+            verify_type: 1,
+            phone_code: '86',
+            phone: ph
+        },
+        success: function (res) {
+            if (res.errcode == 11021) {
+                // 需要展示滑块
+                // 滑块验证的逻辑是滑动验证通过后，SDK再次调用之前的方法，与后端交互，通过success回调返回这次操作的结果，故需要将方法名和之前的入参数据作为showSlide的参数。
+                var slideParam = {
+                    slideCallback: 'sendSMSCodeLogin', // 滑动验证通过时执行方法名，（即触发滑块的原方法，例如：登录（loginSms），获取验证码（sendSmsCodeLogin），校验旧手机（checkPhone））
+                    slideParams: sendParams, // 前端滑动验证通过时执行方法名的参数（例如手机号，验证码,success和fail等等）
+                    failCallback: function (error) {
+                        console.log(error.errmsg)
+                    } // 方法名出错
+                }
+                // 展示滑块
+                TAL_UC.showSlide(slideParam)
+                return
+            }else if(res.errcode == 0){
+                $this.showEject('发送成功');
+                document.getElementById('captcha').style.display = 'none';
+            }else {
+                $this.showEject(res.errmsg);
+                document.getElementById('captcha').style.display = 'none';
+            }
+        },
+        fail: function (error) {
+            console.log(error)
+        }
+    }
+    TAL_UC.sendSMSCodeLogin(sendParams)
+};
+// 用户中心登录
+// 登录
+const ucLogin = function(ph,code,$this) {
+    var loginParams = {
+        data: {
+            phone: ph,    // 地区不同手机号码规则不同
+            phone_code: 86,    // 手机地区码
+            sms_code: code    // 短信验证码
+        },
+        success: function (res) {
+            if (res.errcode == 11021) {
+                // 需要展示滑块
+                // 滑块验证的逻辑是滑动验证通过后，SDK再次调用之前的方法，与后端交互，通过success回调返回这次操作的结果，故需要将方法名和之前的入参数据作为showSlide的参数。
+                var slideParam = {
+                    slideCallback: 'loginSms', // 滑动验证通过时执行方法名，（即触发滑块的原方法，例如：登录（loginSms），获取验证码（sendSmsCodeLogin），校验旧手机（checkPhone））
+                    slideParams: loginParams, // 前端滑动验证通过时执行方法名的参数（例如手机号，验证码,success和fail等等）
+                    failCallback: function (error) {
+                        toastHtml(error.errmsg)
+                    } // 方法名出错
+                }
+                // 展示滑块
+                TAL_UC.showSlide(slideParam)
+                return
+            }else if(res.errcode == 0){
+                $this.bindPhone(res.data.code);
+                document.getElementById('captcha').style.display = 'none';
+            }else {
+                $this.showEject(res.errmsg);
+                document.getElementById('captcha').style.display = 'none';
+            }
+        },
+        fail: function (error) {
+            console.log(error)
+        }
+    };
+    TAL_UC.loginSms(loginParams)
+}
+export default{config:config,VL:VL,getParam:getParam,GetRequest:GetRequest,timestampToTime:timestampToTime,fixTop:fixTop,share:share,ucLogin:ucLogin,ucSend:ucSend}
 

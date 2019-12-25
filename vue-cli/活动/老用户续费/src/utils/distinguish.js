@@ -244,7 +244,7 @@ function detail_parse_forward(address) {
   };
 
   const provinceKey = ['特别行政区', '古自治区', '维吾尔自治区', '壮族自治区', '回族自治区', '自治区', '省省直辖', '省', '市'];
-  const cityKey = ['布依族苗族自治州', '苗族侗族自治州', '自治州', '州', '市', '县'];
+  const cityKey = ['布依族苗族自治州', '苗族侗族自治州', '自治州', '州', '市', '县', '市区'];
 
   for (let i in defaultData) {
     const province = defaultData[i];
@@ -264,6 +264,7 @@ function detail_parse_forward(address) {
       for (let j in province.city) {
         const city = province.city[j];
         index = address.indexOf(city.name);
+        console.log('1',index);
         if (index > -1 && index < 3) {
           parse.city = city.name;
           address = address.substr(index + parse.city.length);

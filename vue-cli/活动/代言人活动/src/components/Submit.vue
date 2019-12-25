@@ -220,7 +220,7 @@ export default {
                     accessKeyId: res.data.data.AccessKeyId,
                     accessKeySecret: res.data.data.AccessKeySecret,
                     stsToken: res.data.data.SecurityToken,
-                    bucket: 'abcreading-video',
+                    bucket: 'abcreading-file',
                     // endpoint: 'http://file.abctime.com',
                     // cname: true
                 });

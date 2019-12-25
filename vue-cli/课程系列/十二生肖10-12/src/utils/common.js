@@ -1,15 +1,15 @@
-const config= {
-  "baseUrl": "https://api.abctime.com/",
-  "gzhUrl": "http://gzh.abctime.com/",
-  "sign_key":"hkf%t5SMv1HtrVS!Y%B!NPNS!!0cWgy",
-  "postConfig":{headers: {'Content-Type': 'multipart/form-data'}}
-};
 // const config= {
-//   "baseUrl": "http://test.api.abctime.com/",
-//   "gzhUrl": "http://test.gzh.abctime.com/",
-//   "sign_key":"GriE93gIGp$5bDjQ4rc20FzxWGghTIau",
+//   "baseUrl": "https://api.abctime.com/",
+//   "gzhUrl": "http://gzh.abctime.com/",
+//   "sign_key":"hkf%t5SMv1HtrVS!Y%B!NPNS!!0cWgy",
 //   "postConfig":{headers: {'Content-Type': 'multipart/form-data'}}
 // };
+const config= {
+  "baseUrl": "http://dev.api.abctime.com/",
+  "gzhUrl": "http://dev.gzh.abctime.com/",
+  "sign_key":"GriE93gIGp$5bDjQ4rc20FzxWGghTIau",
+  "postConfig":{headers: {'Content-Type': 'multipart/form-data'}}
+};
 const ua = navigator.userAgent.toLowerCase();
 const VL = {
   isWechat: function () {
@@ -293,5 +293,79 @@ const fixTop = function(obj) {
     obj.setAttribute("data-fixed",st >= ot?"fixed":"");
   }
 }
-export default{config:config,VL:VL,getParam:getParam,GetRequest:GetRequest,timestampToTime:timestampToTime,fixTop:fixTop,share:share}
+// 用户中心
+// 发送验证码
+const ucSend = function(ph,$this) {
+    var sendParams = {
+        data: {
+            verify_type: 1,
+            phone_code: '86',
+            phone: ph
+        },
+        success: function (res) {
+            if (res.errcode == 11021) {
+                // 需要展示滑块
+                // 滑块验证的逻辑是滑动验证通过后，SDK再次调用之前的方法，与后端交互，通过success回调返回这次操作的结果，故需要将方法名和之前的入参数据作为showSlide的参数。
+                var slideParam = {
+                    slideCallback: 'sendSMSCodeLogin', // 滑动验证通过时执行方法名，（即触发滑块的原方法，例如：登录（loginSms），获取验证码（sendSmsCodeLogin），校验旧手机（checkPhone））
+                    slideParams: sendParams, // 前端滑动验证通过时执行方法名的参数（例如手机号，验证码,success和fail等等）
+                    failCallback: function (error) {
+                        console.log(error.errmsg)
+                    } // 方法名出错
+                }
+                // 展示滑块
+                TAL_UC.showSlide(slideParam)
+                return
+            }else if(res.errcode == 0){
+                $this.showEject('发送成功');
+                document.getElementById('captcha').style.display = 'none';
+            }else {
+                $this.showEject(res.errmsg);
+                document.getElementById('captcha').style.display = 'none';
+            }
+        },
+        fail: function (error) {
+            console.log(error)
+        }
+    }
+    TAL_UC.sendSMSCodeLogin(sendParams)
+};
+// 用户中心登录
+// 登录
+const ucLogin = function(ph,code,$this) {
+    var loginParams = {
+        data: {
+            phone: ph,    // 地区不同手机号码规则不同
+            phone_code: 86,    // 手机地区码
+            sms_code: code    // 短信验证码
+        },
+        success: function (res) {
+            if (res.errcode == 11021) {
+                // 需要展示滑块
+                // 滑块验证的逻辑是滑动验证通过后，SDK再次调用之前的方法，与后端交互，通过success回调返回这次操作的结果，故需要将方法名和之前的入参数据作为showSlide的参数。
+                var slideParam = {
+                    slideCallback: 'loginSms', // 滑动验证通过时执行方法名，（即触发滑块的原方法，例如：登录（loginSms），获取验证码（sendSmsCodeLogin），校验旧手机（checkPhone））
+                    slideParams: loginParams, // 前端滑动验证通过时执行方法名的参数（例如手机号，验证码,success和fail等等）
+                    failCallback: function (error) {
+                        toastHtml(error.errmsg)
+                    } // 方法名出错
+                }
+                // 展示滑块
+                TAL_UC.showSlide(slideParam)
+                return
+            }else if(res.errcode == 0){
+                $this.bindPhone(res.data.code);
+                document.getElementById('captcha').style.display = 'none';
+            }else {
+                $this.showEject(res.errmsg);
+                document.getElementById('captcha').style.display = 'none';
+            }
+        },
+        fail: function (error) {
+            console.log(error)
+        }
+    };
+    TAL_UC.loginSms(loginParams)
+}
+export default{config:config,VL:VL,getParam:getParam,GetRequest:GetRequest,timestampToTime:timestampToTime,fixTop:fixTop,share:share,ucLogin:ucLogin,ucSend:ucSend}
 

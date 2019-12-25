@@ -16,7 +16,6 @@ function parseArea(list, init) {
   if (!init && defaultData.length) {
     return true;
   }
-  console.log(list)
   defaultData = list;
   Object.keys(defaultData).forEach(province => {
     if (defaultData[province]) {
@@ -142,9 +141,9 @@ function parseAddr(address) {
   */
 
   address = address.replace(/ {2,}/, ' ');
-
   let detail = detail_parse_forward(address.trim());
   var ignoreArea = detail.province;
+
   if (!detail.city) {
     detail = detail_parse(address.trim());
     if (detail.area && !detail.city) {
@@ -202,8 +201,11 @@ function parseAddr(address) {
     }
   }
   parse.province = detail.province == '' ? ignoreArea : detail.province;
+  parse.province_id = detail.province_id;
   parse.city = detail.city;
+  parse.city_id = detail.city_id;
   parse.area = detail.area;
+  parse.area_id = detail.area_id;
   parse.addr = detail.addr;
   parse.result = detail.result;
   //添加省以及市（2019.6.21）输出字段后填入省市等等
@@ -241,14 +243,14 @@ function detail_parse_forward(address) {
     area: '',
     addr: '',
     name: '',
+    province_id: '',
   };
 
   const provinceKey = ['特别行政区', '古自治区', '维吾尔自治区', '壮族自治区', '回族自治区', '自治区', '省省直辖', '省', '市'];
   const cityKey = ['布依族苗族自治州', '苗族侗族自治州', '自治州', '州', '市', '县'];
 
   for (let i in defaultData) {
-    const province = defaultData[i];
-    console.log(province)
+    const province = defaultData[i];  
     let index = address.indexOf(province.name);
     if (index > -1) {
       if (index > 0) {
@@ -256,7 +258,15 @@ function detail_parse_forward(address) {
         parse.name = address.substr(0, index).trim();
       }
       parse.province = province.name;
-      address = address.substr(index + province.name.length);
+      parse.province_id = defaultData[i].code;
+      let zxArr = [
+          {name: '北京市', code: 100000},
+          {name: '天津市', code: 110000},
+          {name: '上海市', code: 120000},
+          {name: '重庆市', code: 130000},
+      ]
+      let zxCodeArr = ['100000', '110000', '120000', '130000']
+      address = address.substr(index + province.name.length);  
       for (let k in provinceKey) {
         if (address.indexOf(provinceKey[k]) === 0) {
           address = address.substr(provinceKey[k].length);
@@ -264,9 +274,16 @@ function detail_parse_forward(address) {
       }
       for (let j in province.city) {
         const city = province.city[j];
-        index = address.indexOf(city.name);
+        let addIndex = address.indexOf(city.name);
+        let zxIndex = zxCodeArr.indexOf(defaultData[i].code);
+        if(zxIndex >= 0 && addIndex < 0){
+            address = zxArr[zxIndex].name + address;
+            addIndex = address.indexOf(city.name);
+        }
+        index = addIndex;
         if (index > -1 && index < 3) {
           parse.city = city.name;
+          parse.city_id = province.city[j].code;
           address = address.substr(index + parse.city.length);
           for (let k in cityKey) {
             if (address.indexOf(cityKey[k]) === 0) {
@@ -279,6 +296,7 @@ function detail_parse_forward(address) {
               index = address.indexOf(area);
               if (index > -1 && index < 3) {
                 parse.area = area;
+                parse.area_id = city.area[k].code;
                 address = address.substr(index + parse.area.length);
                 break;
               }

@@ -22,7 +22,8 @@
         this.$parent.initCf()
       },
       toApp(){
-          window.location.href = "http://www.abctime.com/download.html?source_id=xf"
+          window.location.href = "http://www.abctime.com/download.html?source_id=xf";
+          _hmt.push(['_trackEvent', 'button', 'click', '弹框-开始学习']);
       }
     },
     watch:{
@@ -60,7 +61,7 @@
         }
         p{
             margin: auto;
-            max-width: 3.8rem;
+            // max-width: 3.8rem;
             font-family: FZY4JW--GB1-0;
             font-size: .3rem;
             color: #8D4E2B;

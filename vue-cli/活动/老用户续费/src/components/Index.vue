@@ -3,12 +3,14 @@
     <div class="index_hd_box">
         <img src="../assets/images/index_hd.png" class="index_hd_img">
         <p class="index_hd_txt">购年卡，免费领价值<span>450</span>元大礼包</p>
+        <p class="index_hd_txt_sm">坚持阅读，学费<span>全返</span></p>
+        <p class="punch_txt">注：返学费活动每个用户只能参加一次</p>
         <div class="index_hd_card_box">
-            <img src="../assets/images/index_card_img.png" class="index_card_img" @click="toPay()">
+            <img src="../assets/images/index_card_img.png" class="index_card_img" @click="toPay(1)">
             <p class="index_card_txt_num">已有 {{suc_num}} 人购买</p>
             <p class="index_card_txt_time">剩余 {{timeObj.day}} 天 {{timeObj.hour}} : {{timeObj.minute}} : {{timeObj.sister}}</p>
-            <img v-if="!hasExpire" src="../assets/images/index_card_btn.png" class="index_card_btn" @click="toPay()">
-            <img v-else src="../assets/images/index_card_btn_dis.png" class="index_card_btn" @click="toPay()">
+            <img v-if="!hasExpire" src="../assets/images/index_card_btn.png" class="index_card_btn" @click="toPay(2)">
+            <img v-else src="../assets/images/index_card_btn_dis.png" class="index_card_btn" @click="toPay(3)">
         </div>
     </div>
     <div class="index_content">
@@ -42,6 +44,13 @@
                     <img v-if="item.pic" class="detail_img" :src="item.pic">
                     <ul class="text_ul">
                         <li v-for="info in detailsArr[$index].textArr">
+                            <p v-html="info"></p>
+                        </li>
+                    </ul>
+                    <p class="tag_title" v-if="item.tagTitle">{{item.tagTitle}}</p>
+                    <p class="tag_desc" v-if="item.tagDesc">{{item.tagDesc}}</p>
+                    <ul v-if="detailsArr[$index].tagArr" class="tag_ul">
+                        <li v-for="info in detailsArr[$index].tagArr">
                             <p v-html="info"></p>
                         </li>
                     </ul>
@@ -98,7 +107,7 @@ export default {
                 info: '220'
             },
             {
-                name: '学习礼包',
+                name: 'RAZ单词卡',
                 pic: 'http://file.abctime.com/activity/renewal/gift_icon.png',
                 info: '128'
             },
@@ -110,15 +119,18 @@ export default {
         ],
         detailsArr: [
             {
-                name: '学习礼包详情',
+                name: 'RAZ原版单词卡礼盒',
                 pic: 'http://file.abctime.com/activity/renewal/gift_img.png',
                 textArr: [
-                    '10张AR主题单词卡',
-                    '5本RAZ分级阅读绘本',
-                    '宝宝英语阅读成长手册',
-                    '儿童无毒12色彩色铅笔',
-                    '超萌胡萝卜橡皮',
+                    // '10张AR主题单词卡',
+                    // '5本RAZ分级阅读绘本',
+                    // '宝宝英语阅读成长手册',
+                    // '儿童无毒12色彩色铅笔',
+                    // '超萌胡萝卜橡皮',
                 ],
+                tagTitle: '108张常用词汇单词卡',
+                tagDesc: '包含六大主题',
+                tagArr: ['动物', '食物', '地点', '服装', '颜色', '家庭成员'],
                 infoArr: [],
             },
             {
@@ -150,6 +162,7 @@ export default {
   },
   mounted(){
     this.getUserInfo();
+    this.shareConfig();
     // 监听这个dom的scroll事件
     this.$refs.viewBox.addEventListener('scroll', () => {
         if(this.$refs.viewBox.scrollTop>0){
@@ -158,7 +171,6 @@ export default {
             this.hasScroll = false;
         }
     }, false)
-    // this.showCf('Hi，请在年卡到期前30天享受您的专属活动吧 <br/>敬请期待～');
   },
   methods:{
 
@@ -179,28 +191,39 @@ export default {
     initCf: function () {
         this.cfStatus = false
     },
-    toPay(){
+    toPay(flag){
         if(this.hasExpire){
             this.showEject('来晚了，活动已结束～')
         }else {
             if(this.canJoin){
                 if(this.hasLogin){
-                    if(this.hasUsed){
-                        this.$router.push({name:'Address'})
-                    }else{
+                    // if(this.hasUsed){
+                    //     this.$router.push({name:'Address'})
+                    // }else{
                         this.$router.push({name:'Order'})
-                    }
+                    // }
                 }else{
                     this.$router.push({name:'Login',params:{pre:'index'}})
                 }
             }else {
                 if(this.hasLogin){
-                    this.showCf('Hi，请在年卡到期前30天享受您的专属活动吧 <br/>敬请期待～');
+                    if(this.hasUsed){
+                        this.$router.push({name:'Address'})
+                    }else{
+                        this.showCf('年卡会员续费专享<br/>活动将于到期前30天开启<br/>敬请期待～');
+                    }
                 }else{
                     this.$router.push({name:'Login',params:{pre:'index'}})
                 }
             }
             // this.$router.push({name:'Submit'})
+        }
+        if(flag == 1){
+            _hmt.push(['_trackEvent', 'button', 'click', '首页-立即领取']);
+        }else if(flag == 2){
+            _hmt.push(['_trackEvent', 'button', 'click', '首页-立即续费']);            
+        }else if(flag == 3){
+            _hmt.push(['_trackEvent', 'button', 'click', '首页-活动过期']);
         }
     },
     getUserInfo(){
@@ -214,12 +237,11 @@ export default {
                 this.suc_num = res.data.data.total_member;
                 this.count_down = res.data.data.count_down
                 this.showTime();
-
                 localStorage.setItem('renew_phone',res.data.data.phone);
                 localStorage.setItem('renew_app_id',res.data.data.app_member_id);
+                this.hasUsed = res.data.data.is_have_used;
                 if(res.data.data.can_use_gift_bag == 1){
                     this.canJoin = true;
-                    this.hasUsed = res.data.data.is_have_used;
                     if(res.data.data.phone){
                         this.hasLogin = true;
                     }else{
@@ -280,7 +302,7 @@ export default {
         let lUrl = encodeURIComponent(window.location.href)
         let wUrl = this.$common.config.gzhUrl + "v3/wechat/wechat/get-wechat"
         let fd = this.$common.getParam('get', {url: lUrl, member_id: member_id});
-        let link = window.location.origin + '/extend/letter/index.html?view_member_id='+member_id
+        let link = window.location.origin + '/renewal/index.html'
         let configObj = {
             title:'RAZ年卡续费大礼包限时抢',
             desc: '续费直减220元，学习礼包和RAZ字母课等你来抢哦',
@@ -355,7 +377,34 @@ export default {
             line-height: .33rem;
             span{
                 font-size: .36rem;
+                color: #FFE51A;
             }
+        }
+        .index_hd_txt_sm{
+            position: absolute;
+            left: 0;
+            top: 2.52rem;
+            width: 100%;
+            font-family: FZY4JW--GB1-0;
+            font-size: .24rem;
+            color: #FFF;
+            letter-spacing: .0068rem;
+            line-height: .33rem;
+            span{
+                font-size: .3rem;
+                color: #FFE51A;
+            }
+        }
+        .punch_txt{
+            position: absolute;
+            left: 0;
+            top: 6.28rem;
+            width: 100%;
+            font-family: FZY4JW--GB1-0;
+            font-size: .22rem;
+            color: #FFF;
+            letter-spacing: .0183rem;
+            line-height: .33rem;
         }
         .index_hd_card_box{
             position: relative;
@@ -429,7 +478,8 @@ export default {
                     font-size: .34rem;
                     color: #5A3ED2;
                     letter-spacing: .02rem;
-                    padding-top: .26rem;
+                    padding: .21rem 0 0 1.2rem;
+                    text-align: left;
                 }
             }
             .desc_content{
@@ -537,7 +587,7 @@ export default {
                         font-size: .34rem;
                         color: #5A3ED2;
                         letter-spacing: .02rem;
-                        padding-top: .6rem;
+                        padding-top: .55rem;
                         display: inline-block;
                         position: relative;
                         &::before{
@@ -601,6 +651,64 @@ export default {
                                 color: #D2E0FF;
                                 letter-spacing: .01rem;
                                 text-align: left;
+                                /deep/ span{
+                                    color: #FDD53C;
+                                }
+                            }
+
+                        }
+                    }
+                    .tag_title{
+                        font-family: FZY4JW--GB1-0;
+                        font-size: .32rem;
+                        color: #D2E0FF;
+                        letter-spacing: .026rem;
+                        line-height: .4rem;
+                        padding: .04rem 0 .05rem;
+                    }
+                    .tag_desc{
+                        font-family: FZY4JW--GB1-0;
+                        font-size: .24rem;
+                        color: #F6BB2B;
+                        letter-spacing: .019rem;
+                    
+                    }
+                    .tag_ul{
+                        text-align: center;
+                        font-size: 0;
+                        width: 6rem;
+                        margin: 0 auto .6rem;
+                        li{
+                            width: 1.7rem;
+                            height: .62rem;
+                            display: inline-block;
+                            // padding-left: .5rem;
+                            text-align: center;
+                            background: #2D30AE;
+                            border-radius: .2rem;
+                            line-height: .62rem;
+                            margin: .2rem .11rem 0;
+                            position: relative;
+                            &:nth-child(1){
+                                margin-top: 0;
+                            }
+                            &::before{
+                                content: '';
+                                width: .1rem;
+                                height: .1rem;
+                                border-radius: 50%;
+                                background: #D2E0FF;
+                                position: absolute;
+                                left: .21rem;
+                                top: .26rem;
+                            }
+                            p{
+                                font-family: FZY4JW--GB1-0;
+                                font-size: .26rem;
+                                color: #D2E0FF;
+                                letter-spacing: .01rem;
+                                // text-align: left;
+                                padding-left: .1rem;
                                 /deep/ span{
                                     color: #FDD53C;
                                 }

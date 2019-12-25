@@ -18,7 +18,8 @@
           <input id="code" type="tel" v-model="code" @input="checkPh" @focus="focus" @blur="blur" maxlength="6">
           <div :class="{'send':true,'active':canSend}" @click="getCode">{{sendText}}</div>
         </div>
-        <div :class="loginStatus?'btn active':'btn'" @click="bindPhone"><span class="icon"></span><span>登录</span></div>
+        <div style="width: 70vw;margin:auto;" id="captcha"></div>
+        <div :class="loginStatus?'btn active':'btn'" @click="getUcCode"><span class="icon"></span><span>登录</span></div>
       </div>
       <div class="ft_box" v-show="blurFlag"></div>
     </div>
@@ -37,9 +38,8 @@ export default {
     // 手机号 验证码 发送验证码按钮标识
 
     return {
-      nickname:'',
-      head_img:'',
-
+      nickname: '',
+      head_img: '',
       tel: '',
       code: '',
       sendCode: true,
@@ -51,7 +51,8 @@ export default {
       sendText: '获取验证码',
       time:0,
       telDis:false,
-      blurFlag: true
+      blurFlag: true,
+      canLogin: true
     }
   },
   created(){
@@ -66,16 +67,24 @@ export default {
     getUserInfo(){
 
     },
-    bindPhone(){
-      if(this.loginStatus){
-        let phone_num = this.tel
-        let code = this.code
+    getUcCode(){
+        if(this.loginStatus){
+            let phone_num = this.tel;
+            let code = this.code;
+            let ucCode = this.$common.ucLogin(phone_num,code,this);
+        }
+    },
+    bindPhone(ucCode){
+      if(this.loginStatus && this.canLogin){
+        this.canLogin = false
+        // let phone_num = this.tel
+        let code = ucCode
         let member_id = window.localStorage.getItem('extendAbcMemberid')
         let openid = window.localStorage.getItem('extendAbcOpenid')
         let source_id = 109;
         let act_id = 4;
         let productId = 110
-        let fd = this.$common.getParam('get',{phone:phone_num,code:code,member_id:member_id,open_id:openid,product_id:productId,source_id:source_id,act_id:act_id})
+        let fd = this.$common.getParam('get',{code:code,member_id:member_id,openid:openid,product_id:productId,source_id:source_id,act_id:act_id})
         let actionUrl = this.$common.config.gzhUrl + 'v3/member/passport/bind-phone'
         let _this = this
         let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
@@ -90,6 +99,7 @@ export default {
           }else{
             _this.showEject(res.data.msg)
           }
+          _this.canLogin = true;
         })
       }
     },
@@ -166,29 +176,30 @@ export default {
       if(this.sendStatus){
         this.sendStatus = false;
         this.canSend = false;
-        let url = this.$common.config.gzhUrl + 'v2/api/api/send'
-        let fd = this.$common.getParam('get',{phone:this.tel})
-        let _this = this;
-        this.time = 60;
-        this.timer()
-        let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
-        this.$axios.post(url,fd,conf).then(
-          (res) => {
-          if(res.data.code == 200){
-            _this.showEject('发送成功')
-          }else{
-            _this.showEject(res.data.msg)
-          }
-        })
-      }else {
-        _this.showEject('请输入正确的手机号')
+        this.$common.ucSend(this.tel,this);
+        // this.sendStatus = false;
+        // this.canSend = false;
+        // let url = this.$common.config.gzhUrl + 'v2/api/api/send'
+        // let fd = this.$common.getParam('get',{phone:this.tel})
+        // let _this = this;
+        // this.time = 60;
+        // this.timer()
+        // let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
+        // this.$axios.post(url,fd,conf).then(
+        //   (res) => {
+        //   if(res.data.code == 200){
+        //     _this.showEject('发送成功')
+        //   }else{
+        //     _this.showEject(res.data.msg)
+        //   }
+        // })
       }
     },
     showEject: function (text) {
       this.ejectText = text
       this.ejectStatus = true
     },
-    initEject: function () {
+    initEject: function () {    
       this.ejectStatus = false
     },
     timer() {

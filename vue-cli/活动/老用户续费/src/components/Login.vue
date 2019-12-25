@@ -6,16 +6,17 @@
       </div>
       <div class="form_box">
         <div class="group phone">
-          <input id="phone" type="tel" v-model="tel" @focus="focus" @blur="blur" @input="checkPh" maxlength="11" placeholder="请输入手机号">
+          <input id="phone" type="tel" v-model="tel" @input="checkPh" maxlength="11" @blur="blur" placeholder="请输入手机号">
           <!--<input id="phone" type="tel" :disabled="telDis" v-model="tel" @focus="focus" @blur="blur" @input="checkPh" maxlength="11">-->
         </div>
         <div class="group code">
-          <input id="code" type="tel" v-model="code" @input="checkPh" @focus="focus" @blur="blur" maxlength="6" placeholder="请输入验证码">
-          <div :class="{'send':true,'active':canSend}" @click="getCode">{{sendText}}</div>
+          <input id="code" type="tel" v-model="code" @input="checkPh" maxlength="6" @blur="blur" placeholder="请输入验证码">
+          <div ref="send_txt" id="send_txt" :class="{'send':true,'active':canSend}" @click="getCode">{{sendText}}</div>
         </div>
-        <div :class="loginStatus?'btn active':'btn'" @click="bindPhone"><span class="icon"></span><span>登 录</span></div>
+        <div style="width: 70vw;margin:auto;" id="captcha"></div>
+        <div :class="loginStatus?'btn active':'btn'" @click="getUcCode"><span class="icon"></span><span>登 录</span></div>
       </div>
-      <div class="ft_box" v-show="blurFlag"></div>
+      <!-- <div class="ft_box" v-show="blurFlag"></div> -->
     </div>
     <eject :message="ejectText" :showState="ejectStatus"></eject>
     <cf :message="cfText" :showState="cfStatus"></cf>
@@ -37,7 +38,7 @@ export default {
     return {
       nickname:'',
       head_img:'',
-      nextPath:'',  
+      nextPath:'Order',  
       tel: '',
       code: '',
       sendCode: true,
@@ -49,7 +50,7 @@ export default {
       cfText: '',
       cfStatus: false,
       sendText: '获取验证码',
-      time:0,
+      time: 60,
       telDis:false,
       blurFlag: true
     }
@@ -58,8 +59,6 @@ export default {
     // this.shareConfig()
   },
   mounted(){
-    this.nickname = window.localStorage.getItem('extendAbcNickname')
-    this.head_img = window.localStorage.getItem('extendAbcHeadimg');
     if(this.$route.params.pre == 'index'){
         this.nextPath = 'Order'
     }else if(this.$route.params.pre == 'address'){
@@ -68,16 +67,21 @@ export default {
     console.log(this.nextPath);
   },
   methods: {
-    getUserInfo(){
-
+    getUcCode(){
+        if(this.loginStatus){
+            let phone_num = this.tel;
+            let code = this.code;
+            let ucCode = this.$common.ucLogin(phone_num,code,this);
+        }
     },
-    bindPhone(){
+    bindPhone(ucCode){
       if(this.loginStatus){  
         let phone_num = this.tel
-        let code = this.code
+        // let code = this.code
+        let code = ucCode
         let member_id = window.localStorage.getItem('extendAbcMemberid')
         let openid = window.localStorage.getItem('extendAbcOpenid')
-        let fd = this.$common.getParam('get',{phone:phone_num,code:code,member_id:member_id,open_id:openid})
+        let fd = this.$common.getParam('get',{phone:phone_num,code:code,member_id:member_id,openid:openid})
         let actionUrl = this.$common.config.gzhUrl + 'v3/member/gift-bag/login'
         let _this = this
         let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
@@ -87,7 +91,7 @@ export default {
                   localStorage.setItem('renew_phone',phone_num);
                   this.$router.push({name:this.nextPath})
               }else{
-                  this.showCf('Hi，请在年卡到期前30天享受您的专属活动吧 <br/>敬请期待～');                  
+                  this.showCf('年卡会员续费专享<br/>活动将于到期前30天开启<br/>敬请期待～');                  
               }
           }else{
             _this.showEject(res.data.msg)
@@ -139,14 +143,15 @@ export default {
     })
     },
     blur(){
-      this.blurFlag = true;
+    //   this.blurFlag = true;
+        window.scrollTo(0, 0)
     },
     focus(){
-      this.blurFlag = false;
+    //   this.blurFlag = false;
     },
     checkPh () {
       if(this.$common.VL.phNum(this.tel)){
-        if(this.sendText == '获取验证码' || this.sendText == '重新发送'){
+        if(this.sendText == '获取验证码' || this.sendText == '重新获取'){
           this.canSend = true
           this.sendStatus = true
         }
@@ -163,23 +168,29 @@ export default {
     },
     getCode: function () {
       let _this = this;
+      if(!this.canSend){
+          return;
+      }
       if(this.sendStatus){
         this.sendStatus = false;
         this.canSend = false;
-        let url = this.$common.config.gzhUrl + 'v2/api/api/send'
-        let fd = this.$common.getParam('get',{phone:this.tel})
-        let _this = this;
-        this.time = 60;
-        this.timer()
-        let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
-        this.$axios.post(url,fd,conf).then(
-          (res) => {
-          if(res.data.code == 200){
-            _this.showEject('发送成功')
-          }else{
-            _this.showEject(res.data.msg)
-          }
-        })
+        this.$common.ucSend(this.tel,this);
+        // let url = this.$common.config.gzhUrl + 'v2/api/api/send'
+        // let fd = this.$common.getParam('get',{phone:this.tel})
+        
+        // let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
+        // this.$axios.post(url,fd,conf).then(
+        //   (res) => {
+        //   if(res.data.code == 200){
+        //     _this.time = 60;
+        //     _this.timer();
+        //     _this.showEject('发送成功');
+        //   }else{
+        //     _this.showEject(res.data.msg);
+        //     _this.sendStatus = true;
+        //     _this.canSend = true;
+        //   }
+        // })
       }else {
         _this.showEject('请输入正确的手机号')
       }
@@ -191,25 +202,29 @@ export default {
     initEject: function () {
       this.ejectStatus = false
     },
+    timer() {
+        // this.sendText = "重新获取" + this.time + "s";
+      if (this.time > 0) {
+        this.time--;
+        this.sendText = "重新获取" + this.time + "s";
+        // document.getElementById('send_txt').innerText = "重新获取" + this.time + "s";
+        // this.$set(that,'sendText',"重新获取" + this.time + "s");
+        this.canSend = false;
+        setTimeout(this.timer, 1000);
+      } else{
+        this.time = 60;
+        // document.getElementById('send_txt').innerText = "重新获取";
+        this.sendText="重新获取";
+        this.canSend = true;
+        this.sendStatus = true;
+      }
+    },
     showCf: function (text) {
         this.cfText = text
         this.cfStatus = true
     },
     initCf: function () {
         this.cfStatus = false
-    },
-    timer() {
-      if (this.time > 0) {
-        this.time--;
-        this.canSend = false;
-        this.sendText='重新获取'+this.time+"s";
-        setTimeout(this.timer, 1000);
-      } else{
-        this.time=0;
-        this.sendText="重新获取";
-        this.canSend = true;
-        this.sendStatus = true;
-      }
     },
   }
 }

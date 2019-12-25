@@ -6,11 +6,13 @@
       <div class="ft_bg"></div>
       <div v-if="hasPay" class="suc_content">
           <div class="suc_box">
-              <p class="title">嗨，您已支付成功！</p>
+              <p class="title">支付成功！</p>
               <img src="../assets/images/suc_img.png" class="suc_img">
               <p class="address_txt">添加收货地址，即可获得专属学习礼包哦～</p>
               <div class="btn_add" @click="toAddress()">+ 添加收货地址</div>
           </div>
+          <p class="kf_txt">如有疑问，可联系小助手<br/>
+            微信号：ABCReading006</p>
       </div>
       <div v-else class="pay_content">
           <div class="hd_box">
@@ -78,7 +80,7 @@ export default {
         cardObj: {
             pic: 'http://file.abctime.com/activity/renewal/card_icon.png',
             name: 'VIP畅玩年卡',
-            price: 368,
+            price: 588,
             num: 1,
             discount: 220
         },
@@ -91,8 +93,8 @@ export default {
                 price: '-¥220'
             },
             {
-                name: '学习礼包',
-                desc: 'RAZ绘本/成长手册/单词卡/铅笔/橡皮',
+                name: 'RAZ原版单词卡',
+                desc: '含108个常用词汇',
                 pic: 'http://file.abctime.com/activity/renewal/gift_icon.png',
                 num: 1,
                 price: ''
@@ -118,11 +120,8 @@ export default {
     getUserInfo(){
 
     },
-    toPay(){
-        this.hasPay = true;
-    },
     toAddress(){
-        this.$router.push({name:'Address'})
+        this.$router.replace({name:'Address'})
     },
     originalPay(){
       let member_id = localStorage.getItem('extendAbcMemberid')
@@ -131,7 +130,7 @@ export default {
       let app_id = localStorage.getItem('renew_app_id') 
 
       let fdObj = {app_member_id:app_id,order_no:'',member_id:member_id,openid:openid,phone:ph,goods_num:1,
-        product_id:130,total_price:368,discount_money:0,money_paid:368,goods_name:'年卡续费大礼包',
+        product_id:130,total_price:588,discount_money:220,money_paid:368,goods_name:'年卡续费大礼包',
         payment_type:3,pay_type:3,trade_type:'JSAPI'};
       let _this = this;
       let fd = this.$common.getParam('get',fdObj);
@@ -147,13 +146,16 @@ export default {
           signType: da.pay.signType, // 签名方式，默认为'SHA1'，使用新版支付需传入'MD5'
           paySign: da.pay.paySign, // 支付签名
           success: function (res) {
-            _this.showEject('购买成功')
+            _this.hasPay = true;
+            _this.showEject('购买成功');
           }
         });
       }else{
         _this.showEject(res.data.msg)
       }
     })
+        _hmt.push(['_trackEvent', 'button', 'click', '订单-确认支付']);
+
     },
     showEject: function (text) {
       this.ejectText = text
@@ -262,21 +264,21 @@ export default {
                     border-top: .02rem solid #240F66;
                     .left_box{
                         display: inline-block;
-                        width: 1.94rem;
+                        width: 1.5rem;
                         .left_img{
-                            width: 1.46rem;
+                            width: 1.4rem;
                             height: auto;
-                            margin: .16rem 0;
+                            margin: .16rem .1rem 0 0;
                         }
                     }
                     &.gift_li{
                         .left_box{
                         display: inline-block;
-                        width: 1.94rem;
+                        width: 1.5rem;
                             .left_img{
                                 width: 1rem;
                                 height: auto;
-                                margin: .16rem 0 0 .3rem;
+                                margin: .16rem .1rem 0 .2rem;
                             }
                         }
                     }
@@ -428,6 +430,13 @@ export default {
                 position: relative;
                 z-index: 10;
             }
+        }
+        .kf_txt{
+            font-family: FZY4JW--GB1-0;
+            font-size: .24rem;
+            color: #696CDB;
+            letter-spacing: .014rem;
+            padding: .3rem 0 0;
         }
     }
   }

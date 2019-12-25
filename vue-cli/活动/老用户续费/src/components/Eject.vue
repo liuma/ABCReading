@@ -1,5 +1,5 @@
 <template>
-  <div class='toast_wrap' v-show='showStatus'>
+  <div class='toast_wrap' v-show='showStatus' v-cloak>
     <p>{{message}}</p>
   </div>
 </template>
@@ -29,6 +29,7 @@
   }
 </script>
 <style scoped lang="less">
+    [v-cloak]{ display:none}
   .toast_wrap{
     position: fixed;
     left: 0;
