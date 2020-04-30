@@ -57,9 +57,7 @@
           </div>
         </div>
       </div>
-      <!--<p class="suc_num">已有{{suc_num}}人在学习！</p>-->
-      <!--<footer v-show="!direct_buy&&!selfSuc&&!has_group">-->
-      <footer v-show="!direct_buy&&!selfSuc&&!has_group">
+      <!-- <footer v-show="!direct_buy&&!selfSuc&&!has_group">
         <div class="original" @click="buy()">￥139.00<br><span>原价购买</span></div>
         <div class="discount" @click="join()">
           <span class="price">¥45.90</span>
@@ -72,13 +70,14 @@
           <span class="price price_join">立即参团 ¥45.90</span>
           <div>3人拼团<br><span>￥139.00</span></div>
         </div>
-      </footer>
+      </footer> -->
       <div class="ft2" v-show="direct_buy" @click="toStudy()">已购买 立即开始学习</div>
       <div class="ft2" v-show="!direct_buy&&selfSuc" @click="toStudy()">拼团成功 开始学习</div>
-      <div class="ft2" v-show="!direct_buy&&selfHasGroup&&!is_full&&!selfSuc" @click="invite()">邀请好友参团</div>
+      <div class="ft2" v-show="!direct_buy&&!selfSuc">活动已结束</div>
+
+      <!-- <div class="ft2" v-show="!direct_buy&&selfHasGroup&&!is_full&&!selfSuc" @click="invite()">邀请好友参团</div>
       <div class="ft2" v-show="!direct_buy&&!selfSuc&&selfHasGroup&&!is_self" @click="backSelf()">拼团中... ...</div>
-      <div class="ft2" v-show="!direct_buy&&!selfHasGroup&&is_full" @click="backSelf()">发起新团</div>
-      <!--<div class="ft2" v-show="!is_full&&groupIng" @click="toPay()">拼团中...</div>-->
+      <div class="ft2" v-show="!direct_buy&&!selfHasGroup&&is_full" @click="backSelf()">发起新团</div> -->
     </div>
     <eject :message="ejectText" :showState="ejectStatus"></eject>
     <div class="share_wrap" v-show="showShare" @click="showShare=false">
@@ -248,7 +247,7 @@
       getMemberInfo(){
         let openid = window.localStorage.getItem('extendAbcOpenid')
         let userUrl = this.$common.config.gzhUrl + 'v3/member/passport/get-info';
-        let fd = this.$common.getParam('get',{openid:openid});
+        let fd = this.$common.getParam('post',{openid:openid});
         let _this = this;
         this.$axios.get(userUrl+'?'+fd).then((res) => {
           if(res.data.code == 200){
@@ -303,47 +302,47 @@
         let _this = this;
         this.$axios.get(url+'?'+fd).then((res) => {
           if(res.data.code == 200){
-          let da = res.data.data
-          let my_group = da.my_group
-          let conf = da.conf;
-          let view_self = da.view_self
-          _this.is_self = da.view_self
-          let view_group = {}
-          _this.direct_buy = da.has_direct_buy
-          _this.suc_num = conf.member_join_num
-          sessionStorage.setItem('gkSucNum',conf.member_join_num);
-          if(!_this.direct_buy){
-            if(view_self){
-              view_group = da.my_group;
-            }else {
-              view_group = da.view_group;
-            }
-            if(view_group.has_group){
-              _this.selfSuc = da.my_group.is_full;
-              _this.selfHasGroup = da.my_group.has_group;
-              _this.has_group = view_group.has_group
-              _this.is_full = view_group.is_full;
-              if(!_this.is_full){
-                _this.endTime = view_group.end_time
-                _this.showTime();
-              }else {
-
-              }
-            }
-            if(view_group.members){
-              let len = 0;
-              for(let i in view_group.members){
-                _this.memberArr[i] = view_group.members[i]
-                if(view_group.members[i].head_img && view_group.members[i].head_img != ''){
-                  len ++
+            let da = res.data.data
+            let my_group = da.my_group
+            let conf = da.conf;
+            let view_self = da.view_self
+            _this.is_self = da.view_self
+            let view_group = {}
+            _this.direct_buy = da.has_direct_buy
+            _this.suc_num = conf.member_join_num
+            sessionStorage.setItem('gkSucNum',conf.member_join_num);
+            if(!_this.direct_buy){
+                if(view_self){
+                    view_group = da.my_group;
+                }else {
+                    view_group = da.view_group;
                 }
-              }
-              if(len <= 3){
-                _this.xNum = 3 - len
-              }
+                if(view_group.has_group){
+                    _this.selfSuc = da.my_group.is_full;
+                    _this.selfHasGroup = da.my_group.has_group;
+                    _this.has_group = view_group.has_group
+                    _this.is_full = view_group.is_full;
+                if(!_this.is_full){
+                    _this.endTime = view_group.end_time
+                    _this.showTime();
+                }else {
+
+                }
+                }
+                if(view_group.members){
+                let len = 0;
+                for(let i in view_group.members){
+                    _this.memberArr[i] = view_group.members[i]
+                    if(view_group.members[i].head_img && view_group.members[i].head_img != ''){
+                        len ++
+                    }
+                }
+                if(len <= 3){
+                    _this.xNum = 3 - len
+                }
+                }
             }
-          }
-          _this.shareConfig();
+            _this.shareConfig();
         }
       })
       },

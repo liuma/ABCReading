@@ -21,7 +21,7 @@
           <div :class="{'send':true,'active':canSend}" @click="getCode">{{sendText}}</div>
         </div>
         <div style="width: 70vw;margin:auto;" id="captcha"></div>
-        <div :class="loginStatus?'btn active':'btn'" @click="getUcCode"><span class="icon"></span><span>登录</span></div>
+        <div :class="loginStatus?'btn active':'btn'" @click="bindPhone"><span class="icon"></span><span>登录</span></div>
       </div>
       <div class="ft_box" v-show="blurFlag"></div>
     </div>
@@ -42,7 +42,6 @@ export default {
     return {
       nickname:'',
       head_img:'',
-
       tel: '',
       code: '',
       sendCode: true,
@@ -70,22 +69,23 @@ export default {
     getUserInfo(){
 
     },
-    getUcCode(){
-        if(this.loginStatus){
-            let phone_num = this.tel;
-            let code = this.code;
-            let ucCode = this.$common.ucLogin(phone_num,code,this);
-        }
-    },
+    // getUcCode(){
+    //     if(this.loginStatus){
+    //         let phone_num = this.tel;
+    //         let code = this.code;
+    //         let ucCode = this.$common.ucLogin(phone_num,code,this);
+    //     }
+    // },
     bindPhone(ucCode){
       if(this.loginStatus && this.canLogin){
         this.canLogin = false;
         let phone_num = this.tel
-        let code = ucCode
+        // let code = ucCode
+        let code = this.code
         let member_id = window.localStorage.getItem('extendAbcMemberid')
         let openid = window.localStorage.getItem('extendAbcOpenid')
         let productId = 113
-        let fd = this.$common.getParam('get',{code:code,member_id:member_id,openid:openid,product_id:productId})
+        let fd = this.$common.getParam('get',{phone:phone_num,code:code,member_id:member_id,open_id:openid,product_id:productId})
         let actionUrl = this.$common.config.gzhUrl + 'v3/member/passport/bind-phone'
         let _this = this
         let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
@@ -173,25 +173,25 @@ export default {
     getCode: function () {
       let _this = this;
       if(this.sendStatus){
-        this.sendStatus = false;
-        this.canSend = false;
-        this.$common.ucSend(this.tel,this);
         // this.sendStatus = false;
         // this.canSend = false;
-        // let url = this.$common.config.gzhUrl + 'v2/api/api/send'
-        // let fd = this.$common.getParam('get',{phone:this.tel})
-        // let _this = this;
-        // this.time = 60;
-        // this.timer()
-        // let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
-        // this.$axios.post(url,fd,conf).then(
-        //   (res) => {
-        //   if(res.data.code == 200){
-        //     _this.showEject('发送成功')
-        //   }else{
-        //     _this.showEject(res.data.msg)
-        //   }
-        // })
+        // this.$common.ucSend(this.tel,this);
+        this.sendStatus = false;
+        this.canSend = false;
+        let url = this.$common.config.gzhUrl + 'v2/api/api/send'
+        let fd = this.$common.getParam('get',{phone:this.tel})
+        let _this = this;
+        this.time = 60;
+        this.timer()
+        let conf = {headers: {'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'}}
+        this.$axios.post(url,fd,conf).then(
+          (res) => {
+          if(res.data.code == 200){
+            _this.showEject('发送成功')
+          }else{
+            _this.showEject(res.data.msg)
+          }
+        })
       }
     },
     showEject: function (text) {

@@ -4,10 +4,17 @@
 //   "sign_key":"hkf%t5SMv1HtrVS!Y%B!NPNS!!0cWgy",
 //   "postConfig":{headers: {'Content-Type': 'multipart/form-data'}}
 // };
+const gzh_url = process.env.NODE_ENV == 'development'?'/apis/':"http://gzh.abctime.com/"
+// const config= {
+//   "baseUrl": "http://test.api.abctime.com/",
+//   "gzhUrl": gzh_url,
+//   "sign_key":"GriE93gIGp$5bDjQ4rc20FzxWGghTIau",
+//   "postConfig":{headers: {'Content-Type': 'multipart/form-data'}}
+// };
 const config= {
-  "baseUrl": "http://dev.api.abctime.com/",
-  "gzhUrl": "http://dev.gzh.abctime.com/",
-  "sign_key":"GriE93gIGp$5bDjQ4rc20FzxWGghTIau",
+  "baseUrl": "https://api.abctime.com/",
+  "gzhUrl": gzh_url,
+  "sign_key":"hkf%t5SMv1HtrVS!Y%B!NPNS!!0cWgy",
   "postConfig":{headers: {'Content-Type': 'multipart/form-data'}}
 };
 const ua = navigator.userAgent.toLowerCase();
@@ -318,6 +325,8 @@ const ucSend = function(ph,$this) {
                 return
             }else if(res.errcode == 0){
                 $this.showEject('发送成功');
+                $this.time = 60;
+                $this.timer()
                 document.getElementById('captcha').style.display = 'none';
             }else {
                 $this.showEject(res.errmsg);
@@ -355,6 +364,7 @@ const ucLogin = function(ph,code,$this) {
                 return
             }else if(res.errcode == 0){
                 $this.bindPhone(res.data.code);
+
                 document.getElementById('captcha').style.display = 'none';
             }else {
                 $this.showEject(res.errmsg);

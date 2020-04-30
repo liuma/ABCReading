@@ -377,7 +377,6 @@
           payment_type:3,pay_type:3,trade_type:'JSAPI'};
         fdObj.product_id = this.goodsObj.product_id
         fdObj.parent_order_no = 0
-        console.log(this.sucStatus)
         if(searchObj.view_member_id && this.canGroup && !this.sucStatus){
           fdObj.parent_order_no = this.goodsObj.order_sn || 0
         }else {

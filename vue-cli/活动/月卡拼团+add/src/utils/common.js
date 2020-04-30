@@ -110,12 +110,6 @@ const GetRequest = function () {
 const getParam = function (type,params,sign_key) {
   sign_key = config.sign_key;
   var name_arr = [],value_arr=[],p_arr=[],get_arr=[];
-  if(!params.version){
-    params.version = 2;
-  }
-  if(!params.act_id){
-    params.act_id = 2;
-  }
   if(type=='post'){
     for(var i in params) {
       name_arr.push(i);

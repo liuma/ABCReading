@@ -124,9 +124,13 @@ export default {
     },
     getUcCode(){
         if(this.loginStatus){
-            let phone_num = this.tel;
-            let code = this.code;
-            let ucCode = this.$common.ucLogin(phone_num,code,this);
+            if(this.phoneNum){
+                this.bindPhone();
+            }else{
+                let phone_num = this.tel;
+                let code = this.code;
+                let ucCode = this.$common.ucLogin(phone_num,code,this);
+            }
         }
     },
     bindPhone(ucCode){
